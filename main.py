@@ -8,7 +8,7 @@ import spacy
 from dotenv import load_dotenv
 
 # importing PassivePy
-PassivePySRC_path = "/home/jimmy/Videos/mystification/PassivePy/PassivePyCode/PassivePySrc"
+PassivePySRC_path = "path_toPassivePySrc"
 if PassivePySRC_path not in sys.path:
     sys.path.append(PassivePySRC_path)
 
