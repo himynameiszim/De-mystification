@@ -4,7 +4,6 @@ Utilizing pre-trained large language models to demystify passive-voice sentences
 ## Set-up
 1. Clone the repository
 ```
-git clone https://github.com/himynameiszim/De-mystification.git
 git clone https://github.com/mitramir55/PassivePy.git
 cd De-mystification/
 ```
@@ -23,14 +22,6 @@ pip3 install -r requirements.txt
 OPENAI_API_KEY="YOUR_API_KEY"
 ```
 - If you decide to use a local language model, skip this.
-5. Link `\PassivePySrc` to `main.py`:
-``` 
-# importing PassivePy
-PassivePySRC_path = "path_to_PassivePySrc"
-if PassivePySRC_path not in sys.path:
-    sys.path.append(PassivePySRC_path)
-```
-
 ## Run
 Run the pipeline with
 ```
