@@ -137,10 +137,10 @@ class AgentClassifierAgent:
                             text_window=llm_input_text_window
                         ).strip()
                         
-                        sentence_data['agent'] = guessed_agent_str if guessed_agent_str else "unknown"
+                        sentence_data['guessed_agent'] = guessed_agent_str if guessed_agent_str else "unknown"
 
                     except Exception as e:
                         print(f"Error during agent guessing for passive sentence '{display_sentence_text[:70]}...': {e}")
-                        sentence_data['agent'] = "error_in_processing"
+                        sentence_data['guessed_agent'] = "error_in_processing"
                         
         return sentences_dict
