@@ -19,6 +19,7 @@ except ImportError as e:
     sys.exit(1)
 
 from langchain_community.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOllama
 
 from modules import (
     read_txt_files_to_sentences_dict,
@@ -49,8 +50,9 @@ def run_pipeline():
 
     # 4. init LLM
     try:
-        llm_gpt4o = ChatOpenAI(model_name="gpt-4o", temperature=0.1, openai_api_key=api_key)
-        print(f"Loaded language model: {llm_gpt4o.name}\n")
+        # llm_model = ChatOpenAI(model_name="gpt-4o", temperature=0.1, openai_api_key=api_key)
+        llm_model = ChatOllama(model="gemma3:12b", temperature=0.1, base_url="http://localhost:11434")
+        print(f"Loaded language model: {llm_model.model}\n")
     except Exception as e:
         print(f"Failed to load language model. {e}\n")
         return
@@ -58,10 +60,10 @@ def run_pipeline():
     # 5. init agents
     try:
         passive_detector = PassiveDetectorAgent(passivepy_instance=passivepy)
-        context_retriever = ContextRetrieverAgent(llm=llm_gpt4o, window_size=5)
-        agent_inferencer = AgentInferenceAgent(llm=llm_gpt4o)
-        mystification_classifier = MystificationClassifierAgent(llm=llm_gpt4o, text_input_window_size=5)
-        agent_classifier = AgentClassifierAgent(llm=llm_gpt4o, passivepy_analyzer=passivepy, text_input_window_size=5)
+        context_retriever = ContextRetrieverAgent(llm=llm_model, window_size=5)
+        agent_inferencer = AgentInferenceAgent(llm=llm_model)
+        mystification_classifier = MystificationClassifierAgent(llm=llm_model, text_input_window_size=5)
+        agent_classifier = AgentClassifierAgent(llm=llm_model, passivepy_analyzer=passivepy, text_input_window_size=5)
         annotator = AnnotatorAgent()
         print("Loaded all agents.\n")
     except Exception as e:
