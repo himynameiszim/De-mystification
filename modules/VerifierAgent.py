@@ -1,5 +1,8 @@
 class VerifierAgent:
     def __init__(self, llm):
+        '''
+        TO BE IMPLEMENTED: VerifierAgent is an agent that verifies the mystification classification of a sentence.
+        '''
         super().__init__()
         self.chain = LLMChain(
             llm=llm,
