@@ -16,12 +16,16 @@ conda activate <environment-name>
 ```
 pip3 install -r requirements.txt
 ```
-4. Set-up API key for LLM <br/>
-- For OpenAI's API key, create an `.env` file:
+4. Set-up environment for LLM <br/>
+- For OpenAI's API key (by default), create an `.env` file:
 ```
 OPENAI_API_KEY="YOUR_API_KEY"
 ```
-- If you decide to use a local language model, skip this.
+- If you decide to use a local language model (e.g: Ollama, etc...), define it inside `main.py`:
+```
+llm_model = ChatOllama(model="gemma3:12b", temperature=0.1, base_url="http://localhost:11434")
+```
+- One might need to change `base_url` to the localhost of one llm's localhost and the `model` to one need.
 ## Run
 Run the pipeline with
 ```
@@ -50,15 +54,6 @@ If everything go smoothly, you should have an `output.json` like this:
             "mystification_idx": "2",
             "verb_phrase": "were thought",
             "agent": "the town's historian"
-        },
-        {
-            "text": "Word spread quickly, and the news was shared with the elders.",
-            "voice_type": "2",
-            "context": "In a village encircled by forests, an unusual event took place as the community prepared for their annual festival. A mysterious book was discovered hidden among the roots of an ancient tree, where it had remained for generations. The town's historian, captivated by the book's intricate designs, examined it and found symbols believed to be clues to a forgotten treasure. This discovery quickly spread throughout the village, prompting the elders to convene and decide to search for the treasure. They created a map and entrusted it to a select group of courageous villagers. The following morning, these adventurers embarked on their quest, navigating through the woods. As they journeyed, a dense fog enveloped them, but they eventually located the ancient oak tree, the rumored site of the buried treasure.",
-            "agent_status": "implied",
-            "mystification_idx": "2",
-            "verb_phrase": "was shared",
-            "agent": "villagers"
         }
     ]
 }
