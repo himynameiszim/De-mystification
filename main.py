@@ -101,11 +101,9 @@ def run_pipeline():
 
     print("...Running annotator...")
     output = annotator.run(sentences_dict)
-    with open('output_wil.json', 'w', encoding='utf-8') as f:
+    with open('output.json', 'w', encoding='utf-8') as f:
         f.write(output)
 
-
-    print("...Deed is done...!\n")
     print(f"Output is saved to 'output.json'.\n")
     f.close()
 
