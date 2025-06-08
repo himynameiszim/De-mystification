@@ -4,7 +4,7 @@ from langchain.chains import LLMChain
 
 class AgentInferenceAgent:
     """
-    Agent to evaluate whther an agent (do-er) is present or implied in a given sentence with its context.
+    Agent to evaluate whther an agent (do-er) is present or implied in a given passive sentence with its context.
     :param llm: An instance of a language model (LLM) to use for inference.
     :param sentences_dict: A dictionary where keys are filenames and values are lists of 'sentences', 'voice_type', 'context' and appended 'agent_status'.
     :return 
@@ -14,7 +14,7 @@ class AgentInferenceAgent:
         self.chain = LLMChain(
             llm=llm,
             prompt=PromptTemplate(
-                input_variables=["sentence", "voice_type", "context"],
+                input_variables=["sentence", "voice_type", "verb_phrase", "context"],
                 template=(
                     "You are analyzing a sentence for the presence of an agent (the doer of an action). "
                     "Based on the provided sentence, its voice type, and its surrounding context, "
@@ -22,11 +22,12 @@ class AgentInferenceAgent:
                     "Some sentences will require common world knowledge. Also, you have to understand the context to determine the agent status.\n\n"
                     "Answer ONLY with one of: 'explicit', 'implied', 'unknown'.\n\n"
                     "Guidance based on voice type:\n"
-                    "- If voice type is '1' (full passive), the agent is typically mentioned (e.g., 'by someone'). Immediately answer with 'explicit'.\n"
-                    "- If voice type is '2' (truncated passive), the agent is not mentioned in the sentence itself. Your task is to determine if it's implied by the context or truly unknown ('implied' or 'unknown').\n\n"
+                    "- If voice type is '1' (full passive), the agent is typically mentioned (e.g., 'by someone/something'). Immediately answer with 'explicit'.\n"
+                    "- If voice type is '2' (truncated passive), the agent is not mentioned in the sentence itself. Your task is to determine whther the agent of the verb phrase is implied or truly unknown ('implied' or 'unknown') based on the context.\n\n"
                     "Input Details:\n"
                     "Voice type (0: non-passive, 1: full passive, 2: truncated passive): {voice_type}\n"
                     "Sentence: {sentence}\n"
+                    "Verb phrase: {verb_phrase}\n"
                     "Context: {context}\n\n"
                     "Agent Status (explicit, implied, or unknown):"
                 ),
@@ -39,6 +40,7 @@ class AgentInferenceAgent:
 
                 sentence_text = sentence_data.get('text')
                 voice_type_str = sentence_data.get('voice_type')
+                verb_phrase_str = sentence_data.get('verb_phrase')
                 
                 # Ensure sentence_text is available for logging or if needed by LLM
                 # Default to empty string if None, to avoid errors with string operations like [:50]
@@ -49,7 +51,7 @@ class AgentInferenceAgent:
                 elif voice_type_str == '1':  # Full Passive
                     sentence_data['agent_status'] = 'explicit'
                 elif voice_type_str == '2':  # Truncated Passive - needs LLM processing
-                    if sentence_text is None: # Sentence text is crucial for the LLM
+                    if sentence_text is None:
                         print(f"Warning: Missing 'text' for a voice_type '2' sentence in {filename}. Assigning 'unknown' agent_status.")
                         sentence_data['agent_status'] = 'unknown'
                         continue
@@ -61,7 +63,8 @@ class AgentInferenceAgent:
                         # Call the LLM only for truncated passives
                         result_str = self.chain.run(
                             sentence=sentence_text,
-                            voice_type=voice_type_str,  # Will be '2'
+                            voice_type=voice_type_str,
+                            verb_phrase=verb_phrase_str,
                             context=current_context
                         )
                         

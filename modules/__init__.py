@@ -1,18 +1,22 @@
-from .utils import split_text_into_sentences, read_txt_files_to_sentences_dict
-from .passive_detector import PassiveDetectorAgent
-from .context_retriever import ContextRetrieverAgent
-from .agent_inference import AgentInferenceAgent
-from .mystification_classifier import MystificationClassifierAgent
-from .agent_classifier import AgentClassifierAgent
-from .annotator import AnnotatorAgent
+from .utils import split_text_into_sentences, read_txt_files_to_sentences_dict, get_passive_subject, convert_passive_verb_to_active
+from .passive_detect_agent import PassiveDetectorAgent
+from .context_agent import ContextRetrieverAgent
+from .inference_agent import AgentInferenceAgent
+from .index_agent import MystificationClassifierAgent
+from .classify_agent import AgentClassifierAgent
+from .verify_agent import VerifierAgent
+from .annotator_agent import AnnotatorAgent
 
 __all__ = [
     "split_text_into_sentences",
     "read_txt_files_to_sentences_dict",
+    "get_passive_subject",
+    "convert_passive_verb_to_active",
     "PassiveDetectorAgent",
     "ContextRetrieverAgent",
     "AgentInferenceAgent",
     "MystificationClassifierAgent",
     "AgentClassifierAgent",
+    "VerifierAgent",
     "AnnotatorAgent",
 ]

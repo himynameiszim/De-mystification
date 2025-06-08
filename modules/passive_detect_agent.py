@@ -20,25 +20,27 @@ class PassiveDetectorAgent:
                 sentences_list_to_process = [sentences_data]
             elif isinstance(sentences_data, (list, tuple)):
                 sentences_list_to_process = sentences_data
-
+    
             for sentence_item in sentences_list_to_process:
                 sentence_text = ""
                 voice_type = '0' #default is non-passive
+                verb_phrase_str = "NA" #default for non-passive
 
                 sentence_text = sentence_item
-                
                 doc = self.passivepy.nlp(sentence_text)
 
                 # check for full passive
                 full_match = self.passivepy._find_unique_spans(doc, truncated_passive=False, full_passive=True)
                 if full_match:
                     voice_type = '1'
+                    verb_phrase_str = self.passivepy.match_text(sentence_text, full_passive=True, truncated_passive=False)["full_passive_matches"][0][0]
                 else:
                     truncated_match = self.passivepy._find_unique_spans(doc, truncated_passive=True, full_passive=False)
                     if truncated_match:
                        voice_type = '2'
+                       verb_phrase_str = self.passivepy.match_text(sentence_text, full_passive=False, truncated_passive=True)["truncated_passive_matches"][0][0]
 
-                processed_sentences_for_file.append([sentence_text, voice_type])
+                processed_sentences_for_file.append([sentence_text, voice_type, verb_phrase_str])
             
             sentences_dict[filename] = processed_sentences_for_file
 

@@ -1,6 +1,7 @@
 import os
 import sys
 import spacy
+import pyinflect
 # import warnings
 
 # warnings.filterwarnings("ignore")
@@ -24,11 +25,14 @@ from langchain_community.chat_models import ChatOllama
 from modules import (
     read_txt_files_to_sentences_dict,
     split_text_into_sentences,
+    get_passive_subject,
+    convert_passive_verb_to_active,
     PassiveDetectorAgent,
     ContextRetrieverAgent,
     AgentInferenceAgent,
     MystificationClassifierAgent,
     AgentClassifierAgent,
+    VerifierAgent,
     AnnotatorAgent
 )
 
@@ -42,11 +46,11 @@ def run_pipeline():
         return
     
     # 3. init API key
-    load_dotenv()
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-        print("No 'OPENAI_API_KEY' key found in environment variables.\n")
-        return
+    # load_dotenv()
+    # api_key = os.environ.get("OPENAI_API_KEY")
+    # if not api_key:
+    #     print("No 'OPENAI_API_KEY' key found in environment variables.\n")
+    #     return
 
     # 4. init LLM
     try:
@@ -62,8 +66,9 @@ def run_pipeline():
         passive_detector = PassiveDetectorAgent(passivepy_instance=passivepy)
         context_retriever = ContextRetrieverAgent(llm=llm_model, window_size=5)
         agent_inferencer = AgentInferenceAgent(llm=llm_model)
-        mystification_classifier = MystificationClassifierAgent(llm=llm_model, text_input_window_size=5)
-        agent_classifier = AgentClassifierAgent(llm=llm_model, passivepy_analyzer=passivepy, text_input_window_size=5)
+        mystification_classifier = MystificationClassifierAgent(llm=llm_model)
+        agent_classifier = AgentClassifierAgent(llm=llm_model, passivepy_analyzer=passivepy)
+        verifier = VerifierAgent(llm=llm_model)
         annotator = AnnotatorAgent()
         print("Loaded all agents.\n")
     except Exception as e:
@@ -84,29 +89,33 @@ def run_pipeline():
 
     # 7. run pipeline
     print("...Doing my job...\n")
-    print("...Running passive detector...")
+    print("...Running passive detector agent...")
     sentences_dict = passive_detector.run(sentences_dict)
     if not sentences_dict:
         print("No passive sentences detected. Exiting pipeline.\n")
         return
-    print("...Running context retriever...")
+    print("...Running context retrieve agent...")
     sentences_dict = context_retriever.run(sentences_dict)
 
-    print("...Running agent inferencer...")
+    print("...Running agent inference agent...")
     sentences_dict = agent_inferencer.run(sentences_dict)
 
-    print("...Running mystification classifier...")
+    print("...Running index mystification agent...")
     sentences_dict = mystification_classifier.run(sentences_dict)
 
-    print("...Running agent classifier...")
+    print("...Running classify agent...")
     sentences_dict = agent_classifier.run(sentences_dict)
 
-    print("...Running annotator...")
+    print("...Running verification agent...")
+    sentences_dict = verifier.run(sentences_dict)
+
+    print("...Running annotator agent...")
     output = annotator.run(sentences_dict)
     with open('output.json', 'w', encoding='utf-8') as f:
         f.write(output)
 
     print(f"Output is saved to 'output.json'.\n")
+
     f.close()
 
 def main():
