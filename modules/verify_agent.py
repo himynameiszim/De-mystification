@@ -23,7 +23,7 @@ class VerifierAgent:
             prompt=PromptTemplate(
                 input_variables=["target_sentence", "guessed_agent", "co_text"],
                 template=(
-                    "You are a verification expert. Your task is to carefully read a 'Co-text' and determine if the given subject phrase is explicitly present within it.\n\n"
+                    "You are a verification expert. Your task is to carefully read a 'Co-text' and determine if the given subject phrase can be infered within it.\n\n"
                     "--- Input Data ---\n"
                     "1. Target Sentence: {target_sentence}\n"
                     "2. Co-text (the surrounding sentences where the Target Sentence is found):\n"

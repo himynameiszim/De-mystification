@@ -2,6 +2,8 @@ from langchain_core.language_models.llms import LLM
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableSequence
 
+from .utils import extract_entity
+
 class ContextRetrieverAgent:
     """
     Agent to retrieve context surrounding a sentence as marked as "passive" (either full or truncated).
@@ -15,8 +17,8 @@ class ContextRetrieverAgent:
         self.window_size = window_size
 
         prompt_template_str = (
-            "You are an expert at summarizing text. Below is a collection of sentences from an article written by the editorial board."
-            "Please provide a detailed summary of this entire context. FOCUS on the context of the last sentence.\n\n"
+            "You are an expert at summarizing text.\n"
+            "Please provide a short, detailed summary of this entire context. FOCUS on the context of the last sentence.\n\n"
             "Context Text:\n\"\"\"\n{context_text}\n\"\"\"\n\n"
             "Detailed Summary:"
         )
@@ -45,7 +47,8 @@ class ContextRetrieverAgent:
                     'voice_type': voice_type,
                     'verb_phrase': verb_phrase_str,
                     'co-text': None,  # Default co-text is None
-                    'context': None  # Default context is None
+                    'context': None,  # Default context is None
+                    'entities': []  # Initialize entities as an empty list
                 }
                 
                 if voice_type in ['1', '2']:  # Process only passive sentences for summarization
@@ -59,6 +62,7 @@ class ContextRetrieverAgent:
                     
                     context_texts_to_summarize = sentences_before_texts + [current_sentence_text]
                     full_context_string = " ".join(filter(None, context_texts_to_summarize)).strip()
+                    entities_list = extract_entity(full_context_string) 
 
                     if full_context_string:
                         try:
@@ -73,13 +77,13 @@ class ContextRetrieverAgent:
                                 
                             output_sentence_data['context'] = summary_text.strip()
                             output_sentence_data['co-text'] = full_context_string
+                            output_sentence_data['entities'] = entities_list
                             
                         except Exception as e:
                             print(f"Error during summarization for sentence '{current_sentence_text[:50]}...' in {filename}: {e}")
                             output_sentence_data['context'] = "Error during summarization."
                     else:
                         output_sentence_data['context'] = "Context string was empty; no summary generated."
-                
                 processed_file_entries.append(output_sentence_data)
             
             # Replace the list of lists with the new list of dictionaries for the current file

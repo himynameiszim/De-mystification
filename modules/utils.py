@@ -91,3 +91,10 @@ def convert_passive_verb_to_active(passive_phrase: str) -> str:
             return verb_lemma
         
     return verb_lemma
+
+def extract_entity(text: str) -> list:
+    nlp = spacy.load("en_core_web_lg")
+    doc = nlp(text)
+
+    entities = list(set([ent.text for ent in doc.ents if ent.label_ in ['PERSON', 'ORG', 'GPE', 'NORP']]))
+    return entities if entities else ["NA"]

@@ -27,6 +27,7 @@ from modules import (
     split_text_into_sentences,
     get_passive_subject,
     convert_passive_verb_to_active,
+    extract_entity,
     PassiveDetectorAgent,
     ContextRetrieverAgent,
     AgentInferenceAgent,
@@ -97,14 +98,14 @@ def run_pipeline():
     print("...Running context retrieve agent...")
     sentences_dict = context_retriever.run(sentences_dict)
 
+    print("...Running classify agent...")
+    sentences_dict = agent_classifier.run(sentences_dict)
+
     print("...Running agent inference agent...")
     sentences_dict = agent_inferencer.run(sentences_dict)
 
-    print("...Running index mystification agent...")
-    sentences_dict = mystification_classifier.run(sentences_dict)
-
-    print("...Running classify agent...")
-    sentences_dict = agent_classifier.run(sentences_dict)
+    # print("...Running index mystification agent...")
+    # sentences_dict = mystification_classifier.run(sentences_dict)
 
     print("...Running verification agent...")
     sentences_dict = verifier.run(sentences_dict)

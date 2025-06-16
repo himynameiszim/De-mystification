@@ -12,11 +12,10 @@ class MystificationClassifierAgent:
         self.chain = LLMChain(
             llm=llm,
             prompt=PromptTemplate(
-                input_variables=["text", "text_window", "voice_type", "verb_phrase", "context_summary", "agent_status"], # These are the variables the `run` method will provide
+                input_variables=["text", "text_window", "verb_phrase", "context_summary", "agent_status"], # These are the variables the `run` method will provide
                 template=(
-                    "Your primary task is to assign a mystification index (level) to a specific TARGET SENTENCE. "
-                    "This TARGET SENTENCE is the last sentence within the 'Text Window' provided below. "
-                    "All other input information ('Voice Type', 'Summary of Surrounding Context', 'Determined Agent Status') refers directly to this TARGET SENTENCE.\n\n"
+                    "Your primary task is to assign a mystification level to a specific TARGET SENTENCE. "
+                    "This TARGET SENTENCE is the last sentence within the 'Text Window' provided below.\n\n"
                     
                     "Mystification Index Definitions:\n"
                     "- '1': Stated and known (Agent is explicit).\n"
@@ -24,14 +23,12 @@ class MystificationClassifierAgent:
                     "- '3': Mysterious and unknown (Agent is not recoverable from broader context or common knowledge).\n"
                     
                     "Decision Guidance (apply to the TARGET SENTENCE):\n"
-                    "1. If 'agent_status' is 'explicit' (this will be the case for voice_type '1' sentences), the Mystification Level MUST BE '1'. Your role then is to confirm this based on the provided data.\n"
                     "2. If 'agent_status' is 'implied', (agent is recoverable from the text, the surrounding text (along with its context) and the detected passive verb phrase).\n"
                     "3. If 'agent_status' is 'unknown' (often for sentences where context is unhelpful), the Mystification Level will be '3'.\n\n"
                     
-                    "Input Information for the TARGET SENTENCE:\n"
+                    "Input Information:\n"
                     "Target sentence (the sentence you are analyzing): {text}\n"
                     "Text Window (this window contains the TARGET SENTENCE you are analyzing): {text_window}\n"
-                    "Voice Type of the TARGET SENTENCE (0: non-passive, 1: full passive, 2: truncated passive): {voice_type}\n"
                     "Extracted Verb Phrase from the TARGET SENTENCE: {verb_phrase}\n"
                     "Summary of Surrounding Context (if available for the TARGET SENTENCE): {context_summary}\n"
                     "Determined Agent Status for the TARGET SENTENCE (explicit, implied, or unknown): {agent_status}\n\n"

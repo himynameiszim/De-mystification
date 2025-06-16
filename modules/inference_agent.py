@@ -14,22 +14,23 @@ class AgentInferenceAgent:
         self.chain = LLMChain(
             llm=llm,
             prompt=PromptTemplate(
-                input_variables=["sentence", "voice_type", "verb_phrase", "context"],
+                input_variables=["sentence", "verb_phrase", "cotext", "context", "entities_list", "guessed_agent"],
                 template=(
                     "You are analyzing a sentence for the presence of an agent (the doer of an action). "
-                    "Based on the provided sentence, its voice type, and its surrounding context, "
-                    "determine if an agent is explicitly mentioned, implied, or unknown."
-                    "Some sentences will require common world knowledge. Also, you have to understand the context to determine the agent status.\n\n"
-                    "Answer ONLY with one of: 'explicit', 'implied', 'unknown'.\n\n"
+                    "Based on the provided sentence, its surrounding context, the guessed agent and the list of possible agents infered from the context, "
+                    "determine if an agent is implied, or unknown.\n"
                     "Guidance based on voice type:\n"
-                    "- If voice type is '1' (full passive), the agent is typically mentioned (e.g., 'by someone/something'). Immediately answer with 'explicit'.\n"
-                    "- If voice type is '2' (truncated passive), the agent is not mentioned in the sentence itself. Your task is to determine whther the agent of the verb phrase is implied or truly unknown ('implied' or 'unknown') based on the context.\n\n"
+                    "Your task is to determine whether the guessed agent of the verb phrase is: - 'implied' if the guessed agent is in the provided entity list; - 'unknown' if the guessed agent is not in the provided entity list or 'unknown'.\n"
+                    "Note that the guessed agent can be paraphrased or not exactly match the entity in the list, so use your common sense.\n\n"
                     "Input Details:\n"
-                    "Voice type (0: non-passive, 1: full passive, 2: truncated passive): {voice_type}\n"
-                    "Sentence: {sentence}\n"
-                    "Verb phrase: {verb_phrase}\n"
-                    "Context: {context}\n\n"
-                    "Agent Status (explicit, implied, or unknown):"
+                    "1. Target sentence: {sentence}\n"
+                    "2. Verb phrase: {verb_phrase}\n"
+                    "3. Co-text (surrounding sentences): {cotext}\n"
+                    "4. Context (summary of the article containing the target sentence): {context}\n"
+                    "5. Entity list: {entities_list}\n"
+                    "6. Guessed agent of the verb phrase: {guessed_agent}\n"
+                    "Answer ONLY with one of: 'implied', 'unknown'.\n"
+                    "Agent Status (implied, or unknown):"
                 ),
             ),
         )
@@ -51,25 +52,24 @@ class AgentInferenceAgent:
                 elif voice_type_str == '1':  # Full Passive
                     sentence_data['agent_status'] = 'explicit'
                 elif voice_type_str == '2':  # Truncated Passive - needs LLM processing
-                    if sentence_text is None:
-                        print(f"Warning: Missing 'text' for a voice_type '2' sentence in {filename}. Assigning 'unknown' agent_status.")
-                        sentence_data['agent_status'] = 'unknown'
-                        continue
-
-                    context_str = sentence_data.get('context')
-                    current_context = context_str if context_str is not None else "No additional context provided."
-                    
+                    # input_variables=["sentence", "verb_phrase", "cotext", "context", "entities_list", "guessed_agent"],
                     try:
                         # Call the LLM only for truncated passives
                         result_str = self.chain.run(
                             sentence=sentence_text,
-                            voice_type=voice_type_str,
                             verb_phrase=verb_phrase_str,
-                            context=current_context
+                            cotext=sentence_data.get('co-text'),
+                            context=sentence_data.get('context'),
+                            entities_list=sentence_data.get('entities'),
+                            guessed_agent=sentence_data.get('guessed_agent')
                         )
                         
                         agent_status = result_str.strip().lower()
                         sentence_data['agent_status'] = agent_status
+                        if agent_status == 'implied':
+                            sentence_data['mystification_idx'] = '2'
+                        elif agent_status == 'unknown':
+                            sentence_data['mystification_idx'] = '3'
                         
                     except Exception as e:
                         print(f"Error during agent inference for truncated passive sentence '{display_sentence_text[:70]}...' in {filename}: {e}")
