@@ -57,8 +57,6 @@ class MystificationClassifierAgent:
                 print(f"Warning: Expected a list of sentences for {filename}, but got {type(list_of_sentence_data_dicts)}. Skipping.")
                 continue
 
-            num_sentences_in_file = len(list_of_sentence_data_dicts)
-
             for i, current_sentence_data in enumerate(list_of_sentence_data_dicts):
                 if not isinstance(current_sentence_data, dict):
                     print(f"Warning: Expected a dictionary for sentence data in {filename} at index {i}. Skipping this item.")

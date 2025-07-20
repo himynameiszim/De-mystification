@@ -21,32 +21,33 @@ class AgentClassifierAgent:
         self.passivepy = passivepy_analyzer
 
         prompt_str = (
-            "You are an expert linguistic analyst. Your task is to identify doer of an action"
-            "for a given TARGET PASSIVE SENTENCE and its VERB PHRASE, using all available contextual information.\n"
-            "You will be privided with the list of all entities in the context of the target sentence.\n"
-            "Note that some sentences require common knowledge other than choosing an entity from the provided list.\n\n"
+            "You are an expert linguistic analyst. Your task is to identify doer of an action.\n"
+            "You will be provided with the list of all entities in the context of the target sentence.\n"
+            "Note that some sentences require common knowledge rather than choosing an entity from the provided lists.\n\n"
             "Provided Information:\n"
             "1. TARGET PASSIVE SENTENCE: {target_sentence}\n"
             "2. Voice Type of the Target Sentence: {voice_type} (1 - full passive, 2 - truncated passive)\n"
             "3. Extracted PASSIVE VERB PHRASE from Target Sentence: {verb_phrase}\n"
-            "4. Summarized Context (summary of the article containing the target passive sentence): {context_summary}\n"
+            "4. Context: {context_summary}\n"
             "5. Broader Text Window (original sentences is the last sentence):\n"
             "   \"\"\"\n"
             "   {text_window}\n"
             "   \"\"\"\n\n"
-            "6. List of entities in the co-text: {entities_list}\n"
-            "Based on all the above information, who or what '{active_verb_phrase}' the subject '{subject_of_passive}' "
+            "6. List of entities in the co-text: {entities_list}\n" \
+            "7. Deducible agent list: {deducible_list}\n"
+            "Based on all the above information, who or what perform the action described by the verb phrase "
             "in the target sentence '{target_sentence}'?\n"
             "If the voice type is '1', answer with the agent of the verb phrase directly after 'by'.\n"
-            "If the voice type is '2', you should use the verb phrase and the context to make a guess.\n"
-            "If none of the entities in the provided list cannot possibly perform the given action, use your common sense (e.g: the house was broken into -> answer with 'criminal').\n"
+            "If the voice type is '2': \n"
+            "If the agent is present in the provided deducible agent list, LINK IT TO THE ENTITIES APPEARED IN THE PROVIDED ENTITIES LIST.\n"
+            "If none of the entities in the provided lists cannot possibly perform the given action, use your common sense (e.g: the house was broken into -> answer with 'criminal').\n"
             "If the agent cannot be determined with reasonable certainty even with all the context and common knowledge, answer 'unknown'.\n"
-            "Provide ONLY one agent of the verb phrase.\n"
+            "ANSWER WITH ONLY ONE AGENT FROM {entities_list}.\n"
             "Guessed Agent:"
         )
         prompt = PromptTemplate(
             input_variables=[
-                "target_sentence", "voice_type", "verb_phrase",  "context_summary", "text_window", "entities_list", "active_verb_phrase", "subject_of_passive"
+                "target_sentence", "voice_type", "verb_phrase",  "context_summary", "text_window", "entities_list", "active_verb_phrase", "subject_of_passive", "deducible_list"
             ],
             template=prompt_str
         )
@@ -89,6 +90,7 @@ class AgentClassifierAgent:
                     llm_input_voice_type = voice_type
                     llm_input_context_summary = sentence_data.get('context')
                     llm_input_entities_list = sentence_data.get('entities')
+                    llm_input_deducible_list = sentence_data.get('deducible_agent')
 
 
                     try:
@@ -100,7 +102,8 @@ class AgentClassifierAgent:
                             text_window=llm_input_text_window,
                             entities_list=llm_input_entities_list,
                             active_verb_phrase=llm_input_active_verb_phrase,
-                            subject_of_passive=llm_input_subject_of_passive
+                            subject_of_passive=llm_input_subject_of_passive,
+                            deducible_list=llm_input_deducible_list
                         ).strip()
                         
                         sentence_data['guessed_agent'] = guessed_agent_str if guessed_agent_str else "unknown"

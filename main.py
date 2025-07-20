@@ -2,6 +2,7 @@ import os
 import sys
 import spacy
 import pyinflect
+import json
 # import warnings
 
 # warnings.filterwarnings("ignore")
@@ -34,10 +35,25 @@ from modules import (
     MystificationClassifierAgent,
     AgentClassifierAgent,
     VerifierAgent,
-    AnnotatorAgent
+    AnnotatorAgent,
+    DeducibleAgent
 )
 
 def run_pipeline():
+    # 1. init deducable agent list
+    try:
+        deducable_agent_map = {}
+        with open('D:\mystic\De-mystification\deducable_agents.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            for item in data:
+                if 'verb' in item and 'deduced_agent' in item:
+                    verb = item['verb']
+                    agent = item['deduced_agent']
+                    deducable_agent_map[verb] = agent
+            print(f"Loaded deducable agents: {len(deducable_agent_map)} entries\n")
+    except FileNotFoundError:
+        print("There is no 'deducable_agents' file. We will skip this.\n")
+        
     # 2. init PassivePy
     try:
         passivepy = PassivePy.PassivePyAnalyzer(spacy_model = "en_core_web_lg")
@@ -66,6 +82,7 @@ def run_pipeline():
     try:
         passive_detector = PassiveDetectorAgent(passivepy_instance=passivepy)
         context_retriever = ContextRetrieverAgent(llm=llm_model, window_size=5)
+        deduce_agent = DeducibleAgent(llm=llm_model)
         agent_inferencer = AgentInferenceAgent(llm=llm_model)
         mystification_classifier = MystificationClassifierAgent(llm=llm_model)
         agent_classifier = AgentClassifierAgent(llm=llm_model, passivepy_analyzer=passivepy)
@@ -97,6 +114,9 @@ def run_pipeline():
         return
     print("...Running context retrieve agent...")
     sentences_dict = context_retriever.run(sentences_dict)
+
+    print("...Running deducible agent...")
+    sentences_dict = deduce_agent.run(sentences_dict, deducible_agent_map=deducable_agent_map)
 
     print("...Running classify agent...")
     sentences_dict = agent_classifier.run(sentences_dict)

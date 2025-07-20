@@ -30,7 +30,6 @@ class ContextRetrieverAgent:
 
     def run(self, sentences_dict: dict) -> dict:
         for filename, sentence_list_from_passive_detector in sentences_dict.items():
-            num_sentences_in_file = len(sentence_list_from_passive_detector)
             # This new list will hold dictionaries instead of lists
             processed_file_entries = [] 
 
@@ -48,7 +47,7 @@ class ContextRetrieverAgent:
                     'verb_phrase': verb_phrase_str,
                     'co-text': None,  # Default co-text is None
                     'context': None,  # Default context is None
-                    'entities': []  # Initialize entities as an empty list
+                    'entities': [],  # Initialize entities as an empty list
                 }
                 
                 if voice_type in ['1', '2']:  # Process only passive sentences for summarization

@@ -14,23 +14,26 @@ class AgentInferenceAgent:
         self.chain = LLMChain(
             llm=llm,
             prompt=PromptTemplate(
-                input_variables=["sentence", "verb_phrase", "cotext", "context", "entities_list", "guessed_agent"],
+                input_variables=["sentence", "verb_phrase", "cotext", "context", "entities_list", "guessed_agent", "deducible_list"],
                 template=(
                     "You are analyzing a sentence for the presence of an agent (the doer of an action). "
-                    "Based on the provided sentence, its surrounding context, the guessed agent and the list of possible agents infered from the context, "
-                    "determine if an agent is implied, or unknown.\n"
-                    "Guidance based on voice type:\n"
-                    "Your task is to determine whether the guessed agent of the verb phrase is: - 'implied' if the guessed agent is in the provided entity list; - 'unknown' if the guessed agent is not in the provided entity list or 'unknown'.\n"
-                    "Note that the guessed agent can be paraphrased or not exactly match the entity in the list, so use your common sense.\n\n"
+                    "Based on the provided information determine if an agent is contextual, other, or unknown.\n"
                     "Input Details:\n"
                     "1. Target sentence: {sentence}\n"
                     "2. Verb phrase: {verb_phrase}\n"
                     "3. Co-text (surrounding sentences): {cotext}\n"
                     "4. Context (summary of the article containing the target sentence): {context}\n"
                     "5. Entity list: {entities_list}\n"
-                    "6. Guessed agent of the verb phrase: {guessed_agent}\n"
-                    "Answer ONLY with one of: 'implied', 'unknown'.\n"
-                    "Agent Status (implied, or unknown):"
+                    "6. Deduced agent list: {deducible_list}\n"
+                    "7. Guessed agent of the verb phrase: {guessed_agent}\n"
+                    "Guidance:\n"
+                    "Your task is to determine whether the guessed agent of the verb phrase is: \n"
+                    "- 'contextual' if the guessed agent is in the provided entity list or deduced agent list;\n"
+                    "- 'other' if the guessed agent does not appear in the provided lists;\n"
+                    "- 'unknown' if the guessed agent is unknown.\n"
+                    "Note that the guessed agent can be paraphrased or not exactly match the entity in the list.\n\n"
+                    "Answer ONLY with one of: 'contextual', 'other' or 'unknown'.\n"
+                    "Agent Status ('contextual', 'other' or 'unknown'):"
                 ),
             ),
         )
@@ -42,6 +45,12 @@ class AgentInferenceAgent:
                 sentence_text = sentence_data.get('text')
                 voice_type_str = sentence_data.get('voice_type')
                 verb_phrase_str = sentence_data.get('verb_phrase')
+                text_window_str = sentence_data.get('co-text')
+                context_str = sentence_data.get('context')
+                entities_list_str = sentence_data.get('entities')
+                guessed_agent_str = sentence_data.get('guessed_agent')
+                deducible_list_str = sentence_data.get('deducible_agent')
+
                 
                 # Ensure sentence_text is available for logging or if needed by LLM
                 # Default to empty string if None, to avoid errors with string operations like [:50]
@@ -49,26 +58,31 @@ class AgentInferenceAgent:
 
                 if voice_type_str == '0':  # Non-Passive
                     sentence_data['agent_status'] = 'NA'
+                    sentence_data['mystification_idx'] = '0'
                 elif voice_type_str == '1':  # Full Passive
                     sentence_data['agent_status'] = 'explicit'
-                elif voice_type_str == '2':  # Truncated Passive - needs LLM processing
-                    # input_variables=["sentence", "verb_phrase", "cotext", "context", "entities_list", "guessed_agent"],
+                    sentence_data['mystification_idx'] = '1'
+                if guessed_agent_str == "unknown":
+                    sentence_data['agent_status'] = 'unknown'
+                    sentence_data['mystification_idx'] = 'NA'
+                else:  # Truncated Passive
                     try:
                         # Call the LLM only for truncated passives
                         result_str = self.chain.run(
                             sentence=sentence_text,
                             verb_phrase=verb_phrase_str,
-                            cotext=sentence_data.get('co-text'),
-                            context=sentence_data.get('context'),
-                            entities_list=sentence_data.get('entities'),
-                            guessed_agent=sentence_data.get('guessed_agent')
+                            cotext=text_window_str,
+                            context=context_str,
+                            entities_list=entities_list_str,
+                            guessed_agent=guessed_agent_str,
+                            deducible_list=deducible_list_str
                         )
                         
                         agent_status = result_str.strip().lower()
                         sentence_data['agent_status'] = agent_status
-                        if agent_status == 'implied':
+                        if agent_status == 'contextual':
                             sentence_data['mystification_idx'] = '2'
-                        elif agent_status == 'unknown':
+                        elif agent_status == 'other' or agent_status == 'unknown':
                             sentence_data['mystification_idx'] = '3'
                         
                     except Exception as e:

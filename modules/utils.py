@@ -27,6 +27,7 @@ def read_txt_files_to_sentences_dict(folder_path: str) -> dict:
             file_path = os.path.join(folder_path, filename)
             with open(file_path, 'r', encoding='utf-8') as f:
                 text = f.read()
+                text = text.replace('\n', '. ')
                 sentences = split_text_into_sentences(text)
                 # Use filename without extension as key, or keep full filename as key
                 key = os.path.splitext(filename)[0]

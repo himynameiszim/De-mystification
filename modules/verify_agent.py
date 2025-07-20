@@ -21,15 +21,14 @@ class VerifierAgent:
         self.chain = LLMChain(
             llm=llm,
             prompt=PromptTemplate(
-                input_variables=["target_sentence", "guessed_agent", "co_text"],
+                input_variables=["guessed_agent", "co_text"],
                 template=(
-                    "You are a verification expert. Your task is to carefully read a 'Co-text' and determine if the given subject phrase can be infered within it.\n\n"
+                    "You are a verification expert. Your task is to carefully read the text and determine if the given subject phrase can be infered (or appear) within it.\n\n"
                     "--- Input Data ---\n"
-                    "1. Target Sentence: {target_sentence}\n"
-                    "2. Co-text (the surrounding sentences where the Target Sentence is found):\n"
+                    "Text:\n"
                     "\"\"\"\n{co_text}\n\"\"\"\n\n"
                     "--- Your Task ---\n"
-                    "Is '{guessed_agent}' stated or appear in the Co-text?\n"
+                    "Does '{guessed_agent}' get stated or appear (might be inferred from) in the Text?\n"
                     "ANSWER ONLY with 'yes' or 'no'."
                 ),
             ),
@@ -45,9 +44,6 @@ class VerifierAgent:
                                sentence dictionaries. Expected keys include 'text', 'voice_type', and 'agent'.
         :return: The modified sentences_dict with 'agent_verification' added.
         """
-        if not sentences_dict:
-            return {}
-
         for filename, list_of_sentence_data_dicts in sentences_dict.items():
             for i, sentence_data in enumerate(list_of_sentence_data_dicts):
                 if not isinstance(sentence_data, dict):
@@ -58,24 +54,24 @@ class VerifierAgent:
                 voice_type = sentence_data.get('voice_type')
                 
                 # Check if this sentence is a candidate for verification
-                if voice_type in ['1', '2']:
-                    llm_input_target_sentence = sentence_data.get('text', "")
+                if voice_type == '1':
+                    sentence_data['agent_verification'] = "yes"
+                    sentence_data['mystification_idx'] = "1"  # Full Passive
+                if sentence_data.get('guessed_agent') == "unknown":
+                    sentence_data['agent_verification'] = "NA"
+                    sentence_data['mystification_idx'] = "NA"  # Unknown agent
+                elif voice_type == '2':
                     llm_input_co_text = sentence_data.get('co-text')
                     llm_input_guessed_agent = sentence_data.get('guessed_agent')
 
                     try:
                         result_str = self.chain.run(
-                            target_sentence=llm_input_target_sentence,
                             guessed_agent=llm_input_guessed_agent,
                             co_text=llm_input_co_text
                         ).strip()
 
                         sentence_data['agent_verification'] = result_str
                     except Exception as e:
-                        print(f"Error during agent verification for sentence '{llm_input_target_sentence[:50]}...': {e}")
-                        sentence_data['agent_verification'] = "error_in_processing"
-                else:
-                    # If not a passive sentence or no valid agent was guessed, verification is not applicable.
-                    sentence_data['agent_verification'] = 'NA'
-                        
+                        # print(f"Error during agent verification for sentence '{llm_input_target_sentence[:50]}...': {e}")
+                        sentence_data['agent_verification'] = "error_in_processing"         
         return sentences_dict

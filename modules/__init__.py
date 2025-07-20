@@ -6,6 +6,7 @@ from .index_agent import MystificationClassifierAgent
 from .classify_agent import AgentClassifierAgent
 from .verify_agent import VerifierAgent
 from .annotator_agent import AnnotatorAgent
+from .deducible_agent import DeducibleAgent
 
 __all__ = [
     "split_text_into_sentences",
@@ -20,4 +21,5 @@ __all__ = [
     "AgentClassifierAgent",
     "VerifierAgent",
     "AnnotatorAgent",
+    "DeducibleAgent"
 ]
