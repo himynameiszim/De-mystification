@@ -55,12 +55,17 @@ class VerifierAgent:
                 
                 # Check if this sentence is a candidate for verification
                 if voice_type == '1':
+                    sentence_data['agent_status'] = "explicit"
                     sentence_data['agent_verification'] = "yes"
                     sentence_data['mystification_idx'] = "1"  # Full Passive
                 if sentence_data.get('guessed_agent') == "unknown":
+                    sentence_data['agent_status'] = "unknown"
                     sentence_data['agent_verification'] = "NA"
-                    sentence_data['mystification_idx'] = "NA"  # Unknown agent
-                elif voice_type == '2':
+                    sentence_data['mystification_idx'] = "3"  # Unknown agent
+                if sentence_data.get('agent_status') == "other" and voice_type != '1':
+                    sentence_data['agent_verification'] = "no"
+                    sentence_data['mystification_idx'] = "3"  # Other agent
+                elif voice_type == '2' and sentence_data.get('guessed_agent') != "unknown" and sentence_data.get('agent_status') != "other":
                     llm_input_co_text = sentence_data.get('co-text')
                     llm_input_guessed_agent = sentence_data.get('guessed_agent')
 

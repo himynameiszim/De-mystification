@@ -62,9 +62,6 @@ class AgentInferenceAgent:
                 elif voice_type_str == '1':  # Full Passive
                     sentence_data['agent_status'] = 'explicit'
                     sentence_data['mystification_idx'] = '1'
-                if guessed_agent_str == "unknown":
-                    sentence_data['agent_status'] = 'unknown'
-                    sentence_data['mystification_idx'] = 'NA'
                 else:  # Truncated Passive
                     try:
                         # Call the LLM only for truncated passives
@@ -80,10 +77,6 @@ class AgentInferenceAgent:
                         
                         agent_status = result_str.strip().lower()
                         sentence_data['agent_status'] = agent_status
-                        if agent_status == 'contextual':
-                            sentence_data['mystification_idx'] = '2'
-                        elif agent_status == 'other' or agent_status == 'unknown':
-                            sentence_data['mystification_idx'] = '3'
                         
                     except Exception as e:
                         print(f"Error during agent inference for truncated passive sentence '{display_sentence_text[:70]}...' in {filename}: {e}")

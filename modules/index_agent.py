@@ -12,7 +12,7 @@ class MystificationClassifierAgent:
         self.chain = LLMChain(
             llm=llm,
             prompt=PromptTemplate(
-                input_variables=["text", "text_window", "verb_phrase", "context_summary", "agent_status"], # These are the variables the `run` method will provide
+                input_variables=["text", "text_window", "verb_phrase", "context_summary", "agent_status", "guessed_agent"], # These are the variables the `run` method will provide
                 template=(
                     "Your primary task is to assign a mystification level to a specific TARGET SENTENCE. "
                     "This TARGET SENTENCE is the last sentence within the 'Text Window' provided below.\n\n"
@@ -23,17 +23,18 @@ class MystificationClassifierAgent:
                     "- '3': Mysterious and unknown (Agent is not recoverable from broader context or common knowledge).\n"
                     
                     "Decision Guidance (apply to the TARGET SENTENCE):\n"
-                    "2. If 'agent_status' is 'implied', (agent is recoverable from the text, the surrounding text (along with its context) and the detected passive verb phrase).\n"
-                    "3. If 'agent_status' is 'unknown' (often for sentences where context is unhelpful), the Mystification Level will be '3'.\n\n"
+                    "2. If 'agent_status' is 'contextual': the Mystification Level will be '2'.\n"
+                    "3. If 'agent_status' is 'unknown': the Mystification Level will be '3'.\n\n"
                     
                     "Input Information:\n"
                     "Target sentence (the sentence you are analyzing): {text}\n"
                     "Text Window (this window contains the TARGET SENTENCE you are analyzing): {text_window}\n"
-                    "Extracted Verb Phrase from the TARGET SENTENCE: {verb_phrase}\n"
-                    "Summary of Surrounding Context (if available for the TARGET SENTENCE): {context_summary}\n"
+                    "Extracted Verb Phrase: {verb_phrase}\n"
+                    "Summary of Surrounding Context: {context_summary}\n"
+                    "Guessed Agent of the Verb Phrase: {guessed_agent}\n"
                     "Determined Agent Status for the TARGET SENTENCE (explicit, implied, or unknown): {agent_status}\n\n"
                     
-                    "Output ONLY the Mystification Level number (1, 2, or 3) for the TARGET SENTENCE:"
+                    "Output ONLY the Mystification Level number (2, or 3) for the TARGET SENTENCE:"
                 ),
             ),
         )
@@ -68,6 +69,7 @@ class MystificationClassifierAgent:
                 voice_type_str = current_sentence_data.get('voice_type')
                 verb_phrase_str = current_sentence_data.get('verb_phrase')
                 agent_status_str = current_sentence_data.get('agent_status')
+                guessed_agent_str = current_sentence_data.get('guessed_agent')
                 
                 display_sentence_text = original_sentence_text # Already defaults to a string above
 
@@ -83,7 +85,7 @@ class MystificationClassifierAgent:
                     if llm_input_text_window is None:
                         llm_input_text_window = "No text window was provided or available."
                     
-                    current_llm_input_agent_status = agent_status_str if agent_status_str in ['explicit', 'implied', 'unknown'] else 'unknown'
+                    current_llm_input_agent_status = agent_status_str if agent_status_str in ['explicit', 'contextual', 'unknown'] else 'unknown'
                     if agent_status_str is None: 
                         current_llm_input_agent_status = 'unknown'
 
@@ -94,7 +96,8 @@ class MystificationClassifierAgent:
                             voice_type=voice_type_str,
                             verb_phrase=verb_phrase_str,
                             context_summary=llm_input_context_summary,
-                            agent_status=current_llm_input_agent_status 
+                            agent_status=current_llm_input_agent_status,
+                            guessed_agent=guessed_agent_str
                         )
                         
                         mystification_idx = result_str.strip()

@@ -21,10 +21,9 @@ class AgentClassifierAgent:
         self.passivepy = passivepy_analyzer
 
         prompt_str = (
-            "You are an expert linguistic analyst. Your task is to identify doer of an action.\n"
-            "You will be provided with the list of all entities in the context of the target sentence.\n"
-            "Note that some sentences require common knowledge rather than choosing an entity from the provided lists.\n\n"
-            "Provided Information:\n"
+            "You are an expert linguistic analyst. Your task is to identify doer of an action in a passive voice sentence.\n"
+            "You will be provided with the list of all entities in the context of the target sentence.\n\n"
+            "Detailed Information:\n"
             "1. TARGET PASSIVE SENTENCE: {target_sentence}\n"
             "2. Voice Type of the Target Sentence: {voice_type} (1 - full passive, 2 - truncated passive)\n"
             "3. Extracted PASSIVE VERB PHRASE from Target Sentence: {verb_phrase}\n"
@@ -35,14 +34,14 @@ class AgentClassifierAgent:
             "   \"\"\"\n\n"
             "6. List of entities in the co-text: {entities_list}\n" \
             "7. Deducible agent list: {deducible_list}\n"
-            "Based on all the above information, who or what perform the action described by the verb phrase "
+            "Based on all the above information, who or what perform the action described by the verb phrase '{verb_phrase}'\n"
             "in the target sentence '{target_sentence}'?\n"
             "If the voice type is '1', answer with the agent of the verb phrase directly after 'by'.\n"
             "If the voice type is '2': \n"
             "If the agent is present in the provided deducible agent list, LINK IT TO THE ENTITIES APPEARED IN THE PROVIDED ENTITIES LIST.\n"
-            "If none of the entities in the provided lists cannot possibly perform the given action, use your common sense (e.g: the house was broken into -> answer with 'criminal').\n"
+            "If none of the entities in the provided lists cannot possibly perform the given action, use common knowledge.\n"
             "If the agent cannot be determined with reasonable certainty even with all the context and common knowledge, answer 'unknown'.\n"
-            "ANSWER WITH ONLY ONE AGENT FROM {entities_list}.\n"
+            "ANSWER WITH ONLY ONE AGENT.\n"
             "Guessed Agent:"
         )
         prompt = PromptTemplate(

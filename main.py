@@ -124,8 +124,8 @@ def run_pipeline():
     print("...Running agent inference agent...")
     sentences_dict = agent_inferencer.run(sentences_dict)
 
-    # print("...Running index mystification agent...")
-    # sentences_dict = mystification_classifier.run(sentences_dict)
+    print("...Running index mystification agent...")
+    sentences_dict = mystification_classifier.run(sentences_dict)
 
     print("...Running verification agent...")
     sentences_dict = verifier.run(sentences_dict)

@@ -1,0 +1,886 @@
+{
+    "a0": [
+        {
+            "text": "If the two sides do not reach an agreement on how to extend a 240 billion euro ($270 billion) loan program beyond June 30, Greece will most likely default on its debts and would probably be forced to abandon the euro..",
+            "voice_type": "2",
+            "verb_phrase": "be forced",
+            "co-text": "Greece, a Financial Zombie State. By THE EDITORIAL BOARDJUNE 12, 2015. Greece and the other countries in the eurozone are once again at an impasse days ahead of a crucial deadline. If the two sides do not reach an agreement on how to extend a 240 billion euro ($270 billion) loan program beyond June 30, Greece will most likely default on its debts and would probably be forced to abandon the euro..",
+            "context": "The editorial highlights a critical juncture for Greece and the Eurozone. Greece is facing a looming deadline regarding a €240 billion loan program. Failure to reach an agreement by June 30th will likely result in Greece defaulting on its debt and potentially exiting the Eurozone – a scenario that paints Greece as a \"financial zombie state\" teetering on the brink of collapse. The focus is squarely on the immediate crisis and the potential catastrophic consequences of failing to secure an extension to the loan program.",
+            "entities": [
+                "Greece"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "But officials in the rest of the eurozone have made the Greek crisis worse since the first loan was made in 2010, by demanding senseless austerity policies that have inflicted suffering on individuals, contracted the economy and pushed the unemployment rate in Greece to 25 percent with about half of its young people looking for work.",
+            "voice_type": "2",
+            "verb_phrase": "was made",
+            "co-text": "For example, he needs to end early-retirement options that are a drain on the public pension system. His government will have to do a lot more to crack down on tax evasion and end cumbersome business and licensing regulations that create perfect opportunities for corruption. Many eurozone leaders don’t trust Mr. Tsipras’s government to carry out such changes, and he and his team haven’t helped with their posturing, including demanding that Germany pay reparations for World War II.. . But officials in the rest of the eurozone have made the Greek crisis worse since the first loan was made in 2010, by demanding senseless austerity policies that have inflicted suffering on individuals, contracted the economy and pushed the unemployment rate in Greece to 25 percent with about half of its young people looking for work.",
+            "context": "The text highlights the significant challenges facing Greek Prime Minister Tsipras as he attempts to reform his nation's economy. While he aims to address issues like unsustainable pension systems, tax evasion, and corruption, he faces a major obstacle: a lack of trust from other eurozone leaders. This distrust stems partly from Tsipras's own provocative actions, such as demanding reparations from Germany. Crucially, the text emphasizes that **eurozone officials themselves have exacerbated the Greek crisis through the imposition of overly harsh austerity measures, which have devastated the Greek economy and created widespread unemployment, particularly among young people.** This points to a core problem: Greece's difficulties are not solely due to internal failings, but also a consequence of external pressures and policies.",
+            "entities": [
+                "Greece",
+                "Germany",
+                "Tsipras",
+                "Greek"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "eurozone officials",
+            "agent_status": "other",
+            "mystification_idx": "3",
+            "agent_verification": "no"
+        },
+        {
+            "text": "Yet instead of moving toward recovery, the country has been trapped in an economic calamity with no end in sight..",
+            "voice_type": "2",
+            "verb_phrase": "has been trapped",
+            "co-text": "I.M.F. officials have been privately pressing the eurozone for debt relief for Greece, but the fund’s managing director, Christine Lagarde, should do more to convince European leaders that the country cannot succeed unless there are major changes to the loan program. The president of the E.C.B., Mario Draghi, recently said “growth with social fairness and fiscal sustainability” had to be a part of any deal between the eurozone and Greece.. . More than five years have passed since European officials reached the first loan agreement with Greece. Yet instead of moving toward recovery, the country has been trapped in an economic calamity with no end in sight..",
+            "context": "The text highlights a growing concern within the International Monetary Fund (IMF) regarding Greece's ongoing economic struggles. While IMF officials have internally advocated for debt relief, there's a feeling that IMF Managing Director Christine Lagarde needs to be more vocal in persuading European leaders to fundamentally alter Greece's loan program. This push stems from the fact that despite five years of agreements, Greece remains mired in a severe economic crisis, a situation echoed by ECB President Mario Draghi's call for a deal that balances growth, social fairness, and fiscal sustainability. **The core message is that Greece's current path is unsustainable and requires significant changes to its loan program to have any hope of recovery.**",
+            "entities": [
+                "E.C.B.",
+                "European",
+                "Christine Lagarde",
+                "Greece",
+                "I.M.F.",
+                "Mario Draghi"
+            ],
+            "deducible_agent": [
+                "court / judge"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        }
+    ],
+    "a1": [
+        {
+            "text": "A meeting of eurozone finance ministers on Thursday, which was billed as the last chance to stave off a Greek default and a Greek exit from the euro, collapsed in rancor and recriminations less than an hour after it started.",
+            "voice_type": "2",
+            "verb_phrase": "was billed",
+            "co-text": "The Endgame in Greece. By THE EDITORIAL BOARDJUNE 19, 2015. A meeting of eurozone finance ministers on Thursday, which was billed as the last chance to stave off a Greek default and a Greek exit from the euro, collapsed in rancor and recriminations less than an hour after it started.",
+            "context": "The editorial board reports that a critical meeting of eurozone finance ministers, intended as a final attempt to prevent Greece from defaulting on its debt and leaving the euro, abruptly failed. The meeting dissolved quickly amid intense disagreement and accusations, signaling a severe escalation of the ongoing Greek financial crisis and raising the very real possibility of Greece's exit from the euro.",
+            "entities": [
+                "Greece",
+                "Greek"
+            ],
+            "deducible_agent": [
+                "company / utility provider"
+            ],
+            "guessed_agent": "someone/some organization",
+            "agent_status": "other",
+            "mystification_idx": "3",
+            "agent_verification": "no"
+        },
+        {
+            "text": "After five years of this, the world can be forgiven for not heeding the serial cries of “wolf.” Only this time, there really is a wolf at the door..",
+            "voice_type": "2",
+            "verb_phrase": "can be forgiven",
+            "co-text": "The Endgame in Greece. By THE EDITORIAL BOARDJUNE 19, 2015. A meeting of eurozone finance ministers on Thursday, which was billed as the last chance to stave off a Greek default and a Greek exit from the euro, collapsed in rancor and recriminations less than an hour after it started. Eurozone leaders then promptly scheduled a summit meeting for Monday to deal with the crisis. After five years of this, the world can be forgiven for not heeding the serial cries of “wolf.” Only this time, there really is a wolf at the door..",
+            "context": "This editorial from June 19, 2015, describes the imminent danger of a Greek default and potential exit from the Eurozone. A critical meeting of finance ministers intended to prevent this collapse failed spectacularly, leading to an emergency summit being called. The editorial highlights a sense of exhaustion and skepticism – the world has become accustomed to false alarms regarding Greece's financial instability (\"cries of 'wolf'\"), but emphasizes that **this time the threat is genuine and the situation is critically serious.**",
+            "entities": [
+                "Greece",
+                "Greek",
+                "wolf"
+            ],
+            "deducible_agent": [
+                "court / jury"
+            ],
+            "guessed_agent": "Greece",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "A record 1 billion euros was withdrawn on Thursday alone, putting major banks in danger of collapse.",
+            "voice_type": "2",
+            "verb_phrase": "was withdrawn",
+            "co-text": "A meeting of eurozone finance ministers on Thursday, which was billed as the last chance to stave off a Greek default and a Greek exit from the euro, collapsed in rancor and recriminations less than an hour after it started. Eurozone leaders then promptly scheduled a summit meeting for Monday to deal with the crisis. After five years of this, the world can be forgiven for not heeding the serial cries of “wolf.” Only this time, there really is a wolf at the door.. . With default a real possibility on June 30, when Greece’s next debt payment is due, Greeks are draining their bank accounts as fast as they can. A record 1 billion euros was withdrawn on Thursday alone, putting major banks in danger of collapse.",
+            "context": "The eurozone finance ministers' emergency meeting aimed at preventing a Greek default and exit from the eurozone failed spectacularly, leading to a hastily arranged summit for Monday. The situation is dire: with a looming debt payment deadline of June 30th, Greeks are rapidly withdrawing their savings – a record 1 billion euros on Thursday alone – threatening the stability of major Greek banks and raising the very real possibility of a default. The repeated warnings about Greece's financial woes have led to \"cries of 'wolf'\" fatigue, but this time, the threat is genuine and poses a significant risk to the Greek banking system.",
+            "entities": [
+                "wolf",
+                "Greece",
+                "Greeks",
+                "Greek"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "Greeks",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        }
+    ],
+    "a10": [],
+    "a11": [
+        {
+            "text": "The fund would be underwritten by fees on all banks over 10 years starting in 2015.",
+            "voice_type": "1",
+            "verb_phrase": "would be underwritten by",
+            "co-text": "It is not a good one. Policy makers at key institutions like the European Parliament and the European Central Bank should push for a better deal.. . The agreement, which the parliament must still approve, would create a poorly funded bureaucratic system that would do little to restore confidence among investors and depositors in the 17 countries that use the euro. The centerpiece would be a 55 billion euro ($75.2 billion) fund to help recapitalize troubled banks. The fund would be underwritten by fees on all banks over 10 years starting in 2015.",
+            "context": "The text criticizes a proposed agreement aimed at restoring confidence in Eurozone banks. It argues the agreement is flawed, creating a weak, bureaucratic system inadequately funded by a €55 billion recapitalization fund. This fund, financed by bank fees over a decade, is deemed insufficient to genuinely reassure investors and depositors within the 17 Eurozone countries and requires improvement from policymakers.",
+            "entities": [
+                "the European Parliament",
+                "the European Central Bank"
+            ],
+            "deducible_agent": [],
+            "guessed_agent": "fees on all banks",
+            "agent_status": "explicit",
+            "mystification_idx": "1",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "But a fund of this size could be overwhelmed by even a modest crisis.",
+            "voice_type": "1",
+            "verb_phrase": "could be overwhelmed by",
+            "co-text": "Policy makers at key institutions like the European Parliament and the European Central Bank should push for a better deal.. . The agreement, which the parliament must still approve, would create a poorly funded bureaucratic system that would do little to restore confidence among investors and depositors in the 17 countries that use the euro. The centerpiece would be a 55 billion euro ($75.2 billion) fund to help recapitalize troubled banks. The fund would be underwritten by fees on all banks over 10 years starting in 2015. But a fund of this size could be overwhelmed by even a modest crisis.",
+            "context": "The text criticizes a proposed agreement aimed at restoring confidence in Eurozone banks. It argues the agreement, still requiring parliamentary approval, establishes an inadequately funded (€55 billion) system that is unlikely to effectively reassure investors and depositors. The fund, financed by bank fees over a decade, is deemed too small to handle even a relatively minor financial crisis, suggesting it will fail to achieve its intended purpose. The focus is on the **fund's insufficient size**, highlighting its potential inadequacy in the face of future economic challenges.",
+            "entities": [
+                "the European Parliament",
+                "the European Central Bank"
+            ],
+            "deducible_agent": [],
+            "guessed_agent": "a modest crisis",
+            "agent_status": "explicit",
+            "mystification_idx": "1",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Ireland, for example, was forced to pump 30 billion euros into just one financial institution, Anglo Irish Bank, during the recent financial crisis..",
+            "voice_type": "2",
+            "verb_phrase": "was forced",
+            "co-text": ". The agreement, which the parliament must still approve, would create a poorly funded bureaucratic system that would do little to restore confidence among investors and depositors in the 17 countries that use the euro. The centerpiece would be a 55 billion euro ($75.2 billion) fund to help recapitalize troubled banks. The fund would be underwritten by fees on all banks over 10 years starting in 2015. But a fund of this size could be overwhelmed by even a modest crisis. Ireland, for example, was forced to pump 30 billion euros into just one financial institution, Anglo Irish Bank, during the recent financial crisis..",
+            "context": "The proposed agreement aims to stabilize banks within the Eurozone through a 55 billion euro fund, financed by bank fees. However, the agreement is viewed skeptically as it's likely underfunded – a crisis requiring even a relatively small amount of support, like the 30 billion euros Ireland needed for Anglo Irish Bank during the last financial crisis, could easily exhaust the fund, ultimately failing to restore investor and depositor confidence.",
+            "entities": [
+                "Ireland",
+                "Anglo Irish Bank"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "Ireland",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "But a government will have to fend for itself if it needs more money to deal with a major crisis — dipping into tax revenues, for instance, or borrowing from another country or from the European Union’s central rescue fund, which has been used to give loans to countries like Greece..",
+            "voice_type": "2",
+            "verb_phrase": "has been used",
+            "co-text": "But a fund of this size could be overwhelmed by even a modest crisis. Ireland, for example, was forced to pump 30 billion euros into just one financial institution, Anglo Irish Bank, during the recent financial crisis.. . European leaders have given too little thought to what will happen when its resolution fund is exhausted. During the first 10 years, individual governments will be able to draw on a portion of the fund based on the contributions of their banks. But a government will have to fend for itself if it needs more money to deal with a major crisis — dipping into tax revenues, for instance, or borrowing from another country or from the European Union’s central rescue fund, which has been used to give loans to countries like Greece..",
+            "context": "The text highlights a significant vulnerability within a newly established European financial resolution fund. While the fund aims to handle crises affecting financial institutions, its size is relatively small and could be quickly depleted. The key concern, emphasized by the final sentence, is that **governments will be left to manage major financial crises on their own**, potentially requiring them to utilize domestic tax revenue, seek loans from other nations, or rely on the EU's central rescue fund – a system already strained by situations like Greece's. Essentially, the fund provides initial support, but doesn't guarantee comprehensive crisis management for individual countries.",
+            "entities": [
+                "European",
+                "Ireland",
+                "Greece",
+                "Anglo Irish Bank",
+                "the European Union’s"
+            ],
+            "deducible_agent": [
+                "individuals / companies"
+            ],
+            "guessed_agent": "European leaders",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Indeed, by one count, more than 100 people could be required to sign off on a decision to recapitalize large banks that require infusions of several billion euros.",
+            "voice_type": "2",
+            "verb_phrase": "could be required",
+            "co-text": "German leaders pushed for these conditions because they do not want their taxpayers to foot the bill for saving banks in other countries. The finance ministers have promised a “backstop” for the fund by 2026, but they provided few details.. . Perversely, the agreement almost seems designed to prevent a timely response to a banking crisis. Several committees made up of European and national government officials must approve a rescue operation before regulators can move in. Indeed, by one count, more than 100 people could be required to sign off on a decision to recapitalize large banks that require infusions of several billion euros.",
+            "context": "The context highlights German reluctance to financially support bank rescues in other European countries, stemming from a desire to protect their taxpayers. While a \"backstop\" funding mechanism for the rescue fund is promised for 2026, the current agreement creates a cumbersome, multi-layered approval process involving over 100 officials. **This complex system, as the last sentence implies, effectively hinders the ability to respond swiftly and decisively to a potential banking crisis.** The design appears to prioritize cost-avoidance over rapid intervention, raising concerns about the fund's actual effectiveness.",
+            "entities": [
+                "European",
+                "German"
+            ],
+            "deducible_agent": [
+                "government / international bodies"
+            ],
+            "guessed_agent": "German",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        }
+    ],
+    "a12": [
+        {
+            "text": "The latest steps are designed to pump more money into the economy, but only modest results can be expected.",
+            "voice_type": "2",
+            "verb_phrase": "are designed",
+            "co-text": "Businesses and individuals are more inclined to put off new investment and spending if they think goods and services will cost less, or not much more, in the future. Low inflation, and deflation in particular, can drive down incomes and makes it harder for people and companies to repay debts.. . Officials at the central bank have acknowledged worries about low inflation for months but have been reluctant to do anything about it until this week.. . The latest steps are designed to pump more money into the economy, but only modest results can be expected.",
+            "context": "The text highlights concerns about persistently low inflation (and potential deflation) impacting economic activity. Businesses and individuals delay spending and investment anticipating lower future prices, and low inflation makes debt repayment more difficult. While central bank officials have recognized this issue, they're only now taking action to inject money into the economy, but anticipate only limited positive impact from these measures. **The key takeaway is that the central bank's recent actions represent a shift, acknowledging the previously downplayed risks of low inflation and signaling a willingness to intervene, albeit cautiously, to address the problem.**",
+            "entities": [
+                "NA"
+            ],
+            "deducible_agent": [
+                "engineers / designers"
+            ],
+            "guessed_agent": "engineers / designers",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "no"
+        },
+        {
+            "text": "For instance, the negative interest rate on deposits at the central bank is meant to discourage banks from parking too much money with the central bank instead of lending it to businesses and consumers — a longstanding problem..",
+            "voice_type": "2",
+            "verb_phrase": "is meant",
+            "co-text": "Low inflation, and deflation in particular, can drive down incomes and makes it harder for people and companies to repay debts.. . Officials at the central bank have acknowledged worries about low inflation for months but have been reluctant to do anything about it until this week.. . The latest steps are designed to pump more money into the economy, but only modest results can be expected. For instance, the negative interest rate on deposits at the central bank is meant to discourage banks from parking too much money with the central bank instead of lending it to businesses and consumers — a longstanding problem..",
+            "context": "The context describes a situation where persistently low inflation (and even deflation) is causing economic concern due to its impact on incomes and debt repayment. Central bank officials have previously hesitated to intervene, but are now taking steps – specifically, implementing negative interest rates – to encourage banks to lend more money into the economy. However, the anticipated impact of these measures is expected to be limited. The focus is on addressing the issue of banks hoarding cash at the central bank instead of providing loans, a key obstacle to economic stimulus.",
+            "entities": [
+                "NA"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        }
+    ],
+    "a13": [
+        {
+            "text": "But the European Union’s insistence, led by Germany, that governments reduce their deficits by cutting spending and raising taxes has continued to impede further recovery.",
+            "voice_type": "1",
+            "verb_phrase": "led by",
+            "co-text": "17, 2014. No one should be surprised that the economy of the eurozone is once more going in reverse. This is an entirely predictable outcome of the misguided policies that European leaders stubbornly insist on pursuing, despite all evidence that they are exactly the wrong medicine.. . The acute phase of the financial crisis in Greece, Spain, Ireland and other European countries ended months ago. But the European Union’s insistence, led by Germany, that governments reduce their deficits by cutting spending and raising taxes has continued to impede further recovery.",
+            "context": "The text argues that the eurozone economy's downturn is unsurprising and a direct consequence of persistent, flawed policies. Despite the initial, acute phase of the financial crisis (affecting countries like Greece, Spain, and Ireland) having passed months prior, the EU – particularly driven by Germany – continues to enforce austerity measures (deficit reduction through spending cuts and tax increases). This continued austerity is actively hindering the eurozone's economic recovery.",
+            "entities": [
+                "Germany",
+                "European",
+                "Ireland",
+                "Greece",
+                "the European Union’s",
+                "Spain"
+            ],
+            "deducible_agent": [],
+            "guessed_agent": "Germany",
+            "agent_status": "explicit",
+            "mystification_idx": "1",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Big changes are plainly needed.",
+            "voice_type": "2",
+            "verb_phrase": "are plainly needed",
+            "co-text": "The economies of Germany and Italy contracted 0.2 percent, while France registered no growth for the second quarter in a row. Other data released in recent days provide little reason for hope that conditions will get better soon. The inflation rate in the eurozone fell to 0.4 percent in July, down from 1.6 percent in the same month a year earlier. Industrial production fell 0.3 percent in June.. . Big changes are plainly needed.",
+            "context": "The provided text paints a concerning picture of the Eurozone economy. Germany and Italy experienced contractions, France stagnated, and industrial production is declining. Critically, the **last sentence highlights the urgent need for significant changes to address this deteriorating economic situation**, suggesting the current trajectory is unsustainable and requires intervention.",
+            "entities": [
+                "Germany",
+                "Italy",
+                "France"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "Fiscal policy must also be rethought and reworked.",
+            "voice_type": "2",
+            "verb_phrase": "be rethought and reworked.",
+            "co-text": "As other central banks around the world have done, the European Central Bank should be buying government and other bonds to drive down interest rates and encourage banks to lend more to businesses and consumers. The bank’s president, Mario Draghi, has argued that governments must adopt more pro-growth policies. He’s right, but he cannot ignore his own responsibility. There is little to no risk that more aggressive central bank policies would cause runaway inflation, given that prices are increasing at a far slower pace than the central bank’s target of just below 2 percent.. It’s true, of course, that monetary policy alone will not be sufficient to revive the eurozone economy. Fiscal policy must also be rethought and reworked.",
+            "context": "The text argues that the European Central Bank (ECB) should adopt more aggressive bond-buying policies to lower interest rates and stimulate lending, echoing actions taken by other central banks. While ECB President Mario Draghi correctly emphasizes the need for governments to enact pro-growth policies, the author contends he's overlooking the ECB's own role. The risk of inflation from such action is minimal given current low price increases. Ultimately, the text stresses that monetary policy alone isn't enough; a broader rethinking of fiscal policy is also essential for eurozone economic revival. **The core focus of the last sentence is the necessity of a comprehensive overhaul of fiscal policy alongside monetary policy to effectively revitalize the eurozone economy.**",
+            "entities": [
+                "the European Central Bank",
+                "Mario Draghi"
+            ],
+            "deducible_agent": [
+                "editors / authorities"
+            ],
+            "guessed_agent": "editors / authorities",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "no"
+        },
+        {
+            "text": "But far greater patience is needed, as well as a big change in attitude in Germany and among the E.U.’s senior leadership..",
+            "voice_type": "2",
+            "verb_phrase": "is needed",
+            "co-text": ". But it is politically difficult, not to mention counterproductive, for governments to do both of those things at a time when the eurozone unemployment rate (11.5 percent in June) is so high. Governments need more flexibility. If anything, they should be taking advantage of low bond yields — Germany can borrow money for 10 years at an interest rate of about 1 percent, and France can borrow at 1.4 percent — to increase spending to kick-start their economies. Once the laggards get going again, their leaders can more easily make the case to their legislatures and citizens for tough economic reforms. But far greater patience is needed, as well as a big change in attitude in Germany and among the E.U.’s senior leadership..",
+            "context": "The text argues that governments within the eurozone are currently constrained from implementing necessary economic reforms and fiscal consolidation simultaneously due to high unemployment (11.5% in June). Instead, it suggests they should leverage the current opportunity of exceptionally low bond yields (Germany at 1%, France at 1.4%) to stimulate economic growth through increased spending. This strategy aims to make the later implementation of tough reforms more palatable to citizens and legislatures once economies begin to recover. The core message emphasizes the need for patience and a shift in perspective, particularly from Germany and the EU's leadership, to prioritize growth before demanding austerity.",
+            "entities": [
+                "Germany",
+                "France",
+                "E.U."
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        }
+    ],
+    "a14": [
+        {
+            "text": "But independence could make Scotland vulnerable to new problems that cannot be easily dismissed..",
+            "voice_type": "2",
+            "verb_phrase": "be easily dismissed",
+            "co-text": ". But Scotland will face significant economic risks if it leaves Britain, which it has been a part of for more than 300 years. This will be particularly true if it keeps using the pound as its currency.. Scotland’s economy relies heavily on financial services and oil production, and it is in much better shape than the economies of other European nations. Its unemployment rate, for instance, was 6.4 percent in the second quarter, substantially lower than the unemployment rate of 11.5 percent in the 18-country eurozone. But independence could make Scotland vulnerable to new problems that cannot be easily dismissed..",
+            "context": "The text discusses the potential economic risks Scotland would face if it were to leave the United Kingdom, a union lasting over 300 years. While Scotland currently possesses a relatively strong economy – particularly in financial services and oil production, and boasts a low unemployment rate compared to the Eurozone – maintaining the British pound as its currency post-independence could expose it to unforeseen and potentially serious economic vulnerabilities. The final sentence highlights this key concern: **the potential for independence to create new, difficult-to-ignore economic problems for Scotland.**",
+            "entities": [
+                "Britain",
+                "Scotland",
+                "European"
+            ],
+            "deducible_agent": [
+                "authorities / courts"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "The euro crisis provides a vivid example of the dangers of a currency union that is not accompanied by a political union..",
+            "voice_type": "1",
+            "verb_phrase": "is not accompanied by",
+            "co-text": "Its unemployment rate, for instance, was 6.4 percent in the second quarter, substantially lower than the unemployment rate of 11.5 percent in the 18-country eurozone. But independence could make Scotland vulnerable to new problems that cannot be easily dismissed.. . Scottish independence leaders say the country will continue using the British pound, even after independence. That would be a terrible idea. The euro crisis provides a vivid example of the dangers of a currency union that is not accompanied by a political union..",
+            "context": "The text highlights a potential contradiction in the argument for Scottish independence. While Scotland boasts a lower unemployment rate than the Eurozone, the text cautions against the proposed plan for Scotland to continue using the British pound post-independence. The core concern, emphasized by referencing the Euro crisis, is that a currency union without a corresponding political union is inherently unstable and poses significant, potentially unmanageable, risks. Essentially, the final sentence serves as a warning against the proposed currency arrangement, drawing a direct parallel to the problems experienced within the Eurozone.",
+            "entities": [
+                "Scottish",
+                "Scotland",
+                "British"
+            ],
+            "deducible_agent": [],
+            "guessed_agent": "a political union",
+            "agent_status": "explicit",
+            "mystification_idx": "1",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Worse, they were forced to enact counterproductive austerity policies by officials from the European Union, the European Central Bank and the International Monetary Fund, as a condition for loans to help them get through the financial crisis..",
+            "voice_type": "2",
+            "verb_phrase": "were forced",
+            "co-text": "Scottish independence leaders say the country will continue using the British pound, even after independence. That would be a terrible idea. The euro crisis provides a vivid example of the dangers of a currency union that is not accompanied by a political union.. . The recessions suffered by countries like Greece, Ireland and Spain were particularly devastating because those countries did not have their own independent central banks that could lower interest rates, devalue their currencies, buy government bonds or provide loans to weakened banks when their economies went into recession. Worse, they were forced to enact counterproductive austerity policies by officials from the European Union, the European Central Bank and the International Monetary Fund, as a condition for loans to help them get through the financial crisis..",
+            "context": "The text argues against a potential Scottish plan to continue using the British pound after independence. It draws a cautionary parallel to the Eurozone crisis, highlighting how countries sharing a currency without a unified political structure (like a central bank capable of independent monetary policy) are vulnerable to severe economic hardship. Specifically, the text points to the damaging austerity measures imposed on nations like Greece, Ireland, and Spain during the Eurozone crisis as a direct consequence of lacking independent economic control, and warns that Scotland would face a similar predicament if it retained the pound post-independence.",
+            "entities": [
+                "British",
+                "Scottish",
+                "Ireland",
+                "Greece",
+                "the International Monetary Fund",
+                "the European Central Bank",
+                "the European Union",
+                "Spain"
+            ],
+            "deducible_agent": [
+                "parliament / legislature"
+            ],
+            "guessed_agent": "officials from the European Union, the European Central Bank and the International Monetary Fund",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Two of Scotland’s biggest banks, the Royal Bank of Scotland and Lloyds Banking Group, which received financial lifelines from the British government during the crisis, said on Thursday that they would relocate to England to be assured that they would be able to borrow from the Bank of England..",
+            "voice_type": "2",
+            "verb_phrase": "be assured",
+            "co-text": "The same scenario would be possible in a politically independent Scotland. If the jobless rate rose in Scotland but remained stable or low in the rest of Britain — England, Wales and Northern Ireland — the Bank of England would be unlikely to cut interest rates solely to help the Scots. (For much of the last 20 years, the jobless rate has been higher in Scotland than in Britain as a whole.). . There’s also no certainty that the London-based central bank, which would no longer feel accountable to Scottish voters, would do everything in its power to save a failing Scottish bank. Two of Scotland’s biggest banks, the Royal Bank of Scotland and Lloyds Banking Group, which received financial lifelines from the British government during the crisis, said on Thursday that they would relocate to England to be assured that they would be able to borrow from the Bank of England..",
+            "context": "The text highlights a key risk for an independent Scotland: potential economic vulnerability regarding access to support from the Bank of England. Specifically, if Scotland's economy faltered (as indicated by a rising jobless rate) while the rest of the UK remained stable, the Bank of England would likely not lower interest rates to assist Scotland. Furthermore, the London-based central bank, no longer accountable to Scottish voters, might not prioritize rescuing Scottish banks, a concern that has already prompted major Scottish banks (Royal Bank of Scotland and Lloyds Banking Group) to announce plans to relocate to England to ensure continued access to borrowing from the Bank of England.",
+            "entities": [
+                "the Bank of England",
+                "Wales",
+                "Scots",
+                "British",
+                "England",
+                "London",
+                "Scottish",
+                "Lloyds Banking Group",
+                "Britain",
+                "the Royal Bank of Scotland",
+                "Scotland",
+                "Northern Ireland"
+            ],
+            "deducible_agent": [
+                "government / authorities"
+            ],
+            "guessed_agent": "the Bank of England",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "The appeal of independence, of course, cannot simply be measured in pecuniary terms.",
+            "voice_type": "2",
+            "verb_phrase": "be measured",
+            "co-text": ". Nationalist leaders who are campaigning for a yes vote in this week’s referendum have promised to bolster the Scottish economy by increasing spending on early education programs, transportation, renewable energy and other things they say politicians in London have ignored. But Scotland could arguably do all of them while remaining part of Britain.. . In fact, leaders of the major political parties in the British Parliament have pledged to give Scotland more autonomy over taxes and spending policy if a majority of Scots vote no. The appeal of independence, of course, cannot simply be measured in pecuniary terms.",
+            "context": "The text discusses the arguments surrounding Scotland's upcoming referendum on independence. Nationalist leaders advocating for a \"yes\" vote are highlighting potential economic benefits of independence, specifically increased investment in areas like education, transportation, and renewable energy – areas they claim have been neglected by the UK government. However, the text crucially points out that **the UK government has offered Scotland increased autonomy over taxes and spending *without* requiring independence**, suggesting a potential compromise that addresses the nationalists' economic concerns and potentially undermines the core appeal of separation.",
+            "entities": [
+                "Scots",
+                "Scottish",
+                "London",
+                "Nationalist",
+                "Britain",
+                "the British Parliament",
+                "Scotland"
+            ],
+            "deducible_agent": [
+                "experts / appraisers"
+            ],
+            "guessed_agent": "experts / appraisers",
+            "agent_status": "other",
+            "mystification_idx": "3",
+            "agent_verification": "no"
+        }
+    ],
+    "a2": [
+        {
+            "text": "Greek banks have been shut down to avoid a meltdown; bailout talks with European creditors are frozen; Athens does not have the money to pay 1.6 billion euros due to the International Monetary Fund on Tuesday, threatening default and withdrawal from the euro..",
+            "voice_type": "2",
+            "verb_phrase": "have been shut",
+            "co-text": "Greece’s Future, and the Euro’s. By THE EDITORIAL BOARDJUNE 29, 2015. The referendum called by Greece’s prime minister is a bad idea, but at this stage it’s about the best available. Greek banks have been shut down to avoid a meltdown; bailout talks with European creditors are frozen; Athens does not have the money to pay 1.6 billion euros due to the International Monetary Fund on Tuesday, threatening default and withdrawal from the euro..",
+            "context": "The editorial board argues that a referendum called by Greece's prime minister, while not ideal, is the most viable option given the dire economic situation. Greece faces an imminent default on a significant payment to the IMF, triggering a potential exit from the Eurozone. To prevent a complete financial collapse, Greek banks have been shut down and negotiations with European creditors have stalled, leaving Athens with no funds to meet its obligations.",
+            "entities": [
+                "European",
+                "Greece",
+                "the International Monetary Fund",
+                "Athens",
+                "Greek"
+            ],
+            "deducible_agent": [
+                "management / board"
+            ],
+            "guessed_agent": "Greek",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "So, confronted with conditions from the lenders that he dismissed as “insulting,” Prime Minister Alexis Tsipras made the surprise announcement on Saturday that he was putting the matter before Greek voters in a referendum to be held July 5..",
+            "voice_type": "2",
+            "verb_phrase": "be held",
+            "co-text": "Greece’s Future, and the Euro’s. By THE EDITORIAL BOARDJUNE 29, 2015. The referendum called by Greece’s prime minister is a bad idea, but at this stage it’s about the best available. Greek banks have been shut down to avoid a meltdown; bailout talks with European creditors are frozen; Athens does not have the money to pay 1.6 billion euros due to the International Monetary Fund on Tuesday, threatening default and withdrawal from the euro.. . So, confronted with conditions from the lenders that he dismissed as “insulting,” Prime Minister Alexis Tsipras made the surprise announcement on Saturday that he was putting the matter before Greek voters in a referendum to be held July 5..",
+            "context": "Faced with unsustainable bailout conditions from European creditors and the imminent threat of Greece defaulting on an IMF payment and potentially exiting the Eurozone, Prime Minister Alexis Tsipras has made the surprising decision to hold a referendum on July 5th. This move, while considered a poor choice overall, is presented as the best available option at a moment when Greek banks are shut down and negotiations are at a standstill, leaving the country on the brink of financial collapse.",
+            "entities": [
+                "European",
+                "Alexis Tsipras",
+                "Greece",
+                "the International Monetary Fund",
+                "Athens",
+                "Greek"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "At this point, the long-running accusations filling German and Greek tabloids — that the spendthrift Greeks should be taught to live by European rules; that the relentless austerity demanded by Germany and other lenders has served only to destroy Greece’s economy and its ability to pay back its gargantuan debts — don’t matter much..",
+            "voice_type": "2",
+            "verb_phrase": "should be taught",
+            "co-text": "But given the huge consequences of what is about to happen, the Greeks deserve a chance to say whether they want to stay in the euro, with all the continuing sacrifice that entails, or whether they are prepared for the near-term calamity and long-term unknowns of opting out. At the very least, Greece’s creditors should extend their payment deadlines long enough to hear what the Greek voters say.. . The referendum question, released on Monday, will be perplexing to voters, but it doesn’t really matter. The details of the demands over which the talks have collapsed, mostly dealing with pensions and value-added taxes, are not what the endgame is about. At this point, the long-running accusations filling German and Greek tabloids — that the spendthrift Greeks should be taught to live by European rules; that the relentless austerity demanded by Germany and other lenders has served only to destroy Greece’s economy and its ability to pay back its gargantuan debts — don’t matter much..",
+            "context": "The text argues that Greece should be allowed to hold a referendum on whether to remain in the Eurozone, despite the potential economic upheaval that either choice would bring. The author contends that the specifics of the failed negotiations – focusing on pension and VAT reforms – are secondary to the larger question of Greece's future within the Eurozone. Ultimately, the referendum is about allowing the Greek people to decide their fate, regardless of the years of animosity and blame exchanged between Greece and its creditors (particularly Germany) regarding austerity measures and fiscal responsibility.",
+            "entities": [
+                "Germany",
+                "Greeks",
+                "European",
+                "Greece",
+                "German",
+                "Greek"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "European",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Tsipras may well be compelled to call for new national elections..",
+            "voice_type": "2",
+            "verb_phrase": "be compelled",
+            "co-text": "Merkel and Mr. Hollande to make clear American concerns about the effect it would have on global finance.. . But even if the Greeks vote to stay with the euro, the crisis will not be over. Under the policies currently demanded by the eurozone leaders, the Greeks will find their suffering worse and their prospects unchanged, and Mr. Tsipras may well be compelled to call for new national elections..",
+            "context": "The text highlights that even if Greece votes to remain in the Eurozone, the crisis isn't resolved. The current austerity measures demanded by Eurozone leaders will likely exacerbate the suffering of the Greek people and leave their economic prospects unchanged. This severe situation could potentially force Greek Prime Minister Tsipras to call for new national elections, suggesting a deep instability and dissatisfaction with the imposed policies regardless of the immediate vote outcome. The initial mention of Merkel and Hollande indicates they are involved in communicating American concerns about the broader impact of this situation on global finance.",
+            "entities": [
+                "American",
+                "Greeks",
+                "Hollande",
+                "Tsipras",
+                "Merkel"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "Eurozone leaders",
+            "agent_status": "other",
+            "mystification_idx": "3",
+            "agent_verification": "no"
+        }
+    ],
+    "a3": [
+        {
+            "text": "A Greek exit would also do untold damage to the credibility of the euro and the European project by making clear that any country’s membership in the eurozone could be revoked.",
+            "voice_type": "2",
+            "verb_phrase": "could be revoked",
+            "co-text": ". Letting the country leave the euro will, of course, hurt Greece by making its banks insolvent and bringing most economic activity to a halt while the government issues new scrip, most likely followed by a return to a greatly devalued drachma. Nobody really knows how bad things will get in that scenario. That’s why Mr. Tsipras and the leaders of other Greek political parties said on Monday that they wanted the country to stay in the eurozone.. A Greek exit would also do untold damage to the credibility of the euro and the European project by making clear that any country’s membership in the eurozone could be revoked.",
+            "context": "The text focuses on the potential consequences of Greece leaving the Eurozone. While a departure might seem like a solution to Greece's economic woes, it would likely trigger a severe crisis: bank insolvency, economic shutdown, and the reintroduction of a devalued drachma. Crucially, the final sentence highlights the broader implications: **a Greek exit would severely damage the credibility of the entire Eurozone and the European project by demonstrating that membership isn't guaranteed, potentially opening the door for other countries to question their participation.** This threat to the Eurozone's stability is a key reason why Greek leaders are advocating for remaining within the currency union.",
+            "entities": [
+                "Greece",
+                "Greek",
+                "European",
+                "Tsipras"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "It was European leaders and the International Monetary Fund that made the biggest error in 2012 when they only partially restructured Greece’s debts, a lot of which were owed to banks in Germany and the rest of Europe..",
+            "voice_type": "2",
+            "verb_phrase": "were owed",
+            "co-text": "A Greek exit would also do untold damage to the credibility of the euro and the European project by making clear that any country’s membership in the eurozone could be revoked. That might not be an immediate concern for other economically weaker countries like Italy, Portugal and Spain, given that yields on their government bonds increased only modestly after the Greek vote. But the specter of more exits from the eurozone would undoubtedly make it hard for European leaders to respond to future crises.. Those against debt relief have argued that saving Greece would merely reward a government that has failed to reform its inefficient economy. But that is a self-serving misreading of what happened in the crisis. It was European leaders and the International Monetary Fund that made the biggest error in 2012 when they only partially restructured Greece’s debts, a lot of which were owed to banks in Germany and the rest of Europe..",
+            "context": "The text focuses on the potential ramifications of a Greek exit from the Eurozone, particularly concerning the precedent it would set. While initial market reactions from countries like Italy, Portugal, and Spain were muted, the core concern is that allowing Greece to leave would establish the dangerous principle that Eurozone membership isn't guaranteed. This would severely limit Europe's ability to manage future economic crises. The argument against providing debt relief to Greece, framed as punishing a failing economy, is criticized as a deflection from the significant misstep made in 2012 when European leaders and the IMF only partially restructured Greece’s debt, ultimately exacerbating the situation.",
+            "entities": [
+                "Germany",
+                "European",
+                "Portugal",
+                "Italy",
+                "Greece",
+                "the International Monetary Fund",
+                "Greek",
+                "Spain"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "Banks in Germany and the rest of Europe",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        }
+    ],
+    "a4": [
+        {
+            "text": "stops well short of concluding that the demands made on Greece were wrongheaded and devastating to its economy and society.",
+            "voice_type": "2",
+            "verb_phrase": "demands made",
+            "co-text": "It also says it underestimated the damage that government spending cuts and tax increases would do to the Greek economy. Employees of the fund raised some of these concerns in 2010. But European leaders ignored those warnings because they did not want to put up more money to help Greece, force banks to take losses on their holdings of Greek bonds, or risk undermining investor confidence in other troubled European countries like Spain and Italy.. . The I.M.F. stops well short of concluding that the demands made on Greece were wrongheaded and devastating to its economy and society.",
+            "context": "The International Monetary Fund (IMF) acknowledges it initially underestimated the negative impact of austerity measures – specifically government spending cuts and tax increases – imposed on the Greek economy. Internal concerns about these potential consequences were raised within the IMF as early as 2010, but were disregarded by European leaders who prioritized avoiding further financial commitments, bank losses, and potential instability in other vulnerable Eurozone nations. **Crucially, the text highlights that the IMF is carefully avoiding a definitive statement that the imposed demands were fundamentally flawed and destructive, opting instead for a more cautious acknowledgement of their underestimated impact.**",
+            "entities": [
+                "European",
+                "Italy",
+                "Greece",
+                "I.M.F.",
+                "Greek",
+                "Spain"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "Greece was eventually allowed to restructure its debts, but had it done so earlier it might have avoided some of the economic pain, which shows no meaningful sign of easing.",
+            "voice_type": "2",
+            "verb_phrase": "was eventually allowed",
+            "co-text": "The I.M.F. stops well short of concluding that the demands made on Greece were wrongheaded and devastating to its economy and society. In spite of the errors it acknowledges, the fund bizarrely finds that the “overall thrust of policies” used by the fund and European leaders in Greece was “broadly correct.”. . Whatever the policy makers say does not alter the reality that their bad decisions continue to hobble much of Europe. Greece was eventually allowed to restructure its debts, but had it done so earlier it might have avoided some of the economic pain, which shows no meaningful sign of easing.",
+            "context": "Despite acknowledging errors in its handling of Greece's economic crisis, the IMF surprisingly defends the \"overall thrust\" of the austerity policies it implemented alongside European leaders. This stance is particularly noteworthy because the policies have demonstrably failed to alleviate Greece's economic hardship, suggesting a continued negative impact and raising questions about the IMF's assessment of its own actions. The delayed debt restructuring only exacerbated the ongoing pain, highlighting the consequences of the decisions made.",
+            "entities": [
+                "Greece",
+                "I.M.F.",
+                "European"
+            ],
+            "deducible_agent": [
+                "government / authority"
+            ],
+            "guessed_agent": "European leaders",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        }
+    ],
+    "a5": [
+        {
+            "text": "The reasons are disputed, but Greek officials say European Union misgivings about Gazprom’s extending its stranglehold over the union’s natural gas market was a factor..",
+            "voice_type": "2",
+            "verb_phrase": "are disputed",
+            "co-text": "The three official lenders should agree to this.. . And while the trio’s insistence that Athens sell off mismanaged state enterprises and real estate is sound, the rate of sales to the private sector depends on the willingness of qualified buyers to pay fair market prices.. . That process hit a big snag this week when the only expected bidder for Greece’s natural gas monopoly, a subsidiary of Russia’s Gazprom, unexpectedly withdrew. The reasons are disputed, but Greek officials say European Union misgivings about Gazprom’s extending its stranglehold over the union’s natural gas market was a factor..",
+            "context": "The context details a sticking point in Greece's privatization efforts, a key requirement from its lenders. While Greece's lenders are pushing for the sale of state assets, the process is reliant on private buyers offering fair prices. This process has been significantly hampered by Gazprom's sudden withdrawal as the expected bidder for Greece's natural gas monopoly. Greek officials attribute this withdrawal to concerns from the European Union regarding Gazprom's increasing dominance of the European natural gas market, highlighting a political obstacle to the privatization plan.",
+            "entities": [
+                "Russia",
+                "Greece",
+                "Gazprom",
+                "Athens",
+                "Greek",
+                "European Union"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "That provision should be suspended until new sales terms can be worked out..",
+            "voice_type": "2",
+            "verb_phrase": "should be suspended",
+            "co-text": "That process hit a big snag this week when the only expected bidder for Greece’s natural gas monopoly, a subsidiary of Russia’s Gazprom, unexpectedly withdrew. The reasons are disputed, but Greek officials say European Union misgivings about Gazprom’s extending its stranglehold over the union’s natural gas market was a factor.. . Gazprom’s withdrawal cost Athens more than $1 billion in expected privatization revenues. Under the terms of the current bailout agreement, devastating new government spending cuts must now replace 50 percent of those lost revenues. That provision should be suspended until new sales terms can be worked out..",
+            "context": "The Greek government is facing a significant financial crisis stemming from Gazprom's sudden withdrawal from bidding on Greece's natural gas monopoly. This withdrawal, reportedly due to EU concerns about Gazprom's market dominance, has cost Greece over $1 billion in anticipated privatization revenue. Critically, Greece is bound by a bailout agreement that mandates severe government spending cuts to compensate for lost revenue, and **the text argues that this provision – the requirement for those devastating spending cuts – should be temporarily suspended to allow time for renegotiating the sales terms.**",
+            "entities": [
+                "Russia",
+                "Greece",
+                "Gazprom",
+                "Athens",
+                "Greek",
+                "European Union"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "But the I.M.F., having expressed some regret for past error, should see more clearly the harm being done..",
+            "voice_type": "2",
+            "verb_phrase": "being done",
+            "co-text": "It is now more than 20 percent smaller than in 2007. Overall unemployment is 27 percent, and the rate is more than twice that for people under 25. Surely the three lenders’ economic experts understand that shrinking a shriveled economy and idling more of its potential work force will not help pay off Greece’s debts.. . The stubborn insistence of European officials that nothing is wrong with this picture probably means these officials will not respond constructively to Athens’s reasonable requests for relief. But the I.M.F., having expressed some regret for past error, should see more clearly the harm being done..",
+            "context": "The text criticizes the austerity measures being imposed on Greece by European lenders (likely the \"three lenders\" mentioned) and highlights their counterproductive nature. Greece's economy has significantly shrunk since 1997, unemployment is extremely high (especially among young people), and the author argues that these policies are actively hindering Greece's ability to repay its debts. **The core argument focuses on the expectation that the International Monetary Fund (IMF), acknowledging past missteps, should recognize the damage caused by these policies and therefore be more receptive to Greece's requests for debt relief.**",
+            "entities": [
+                "Greece",
+                "Athens",
+                "I.M.F.",
+                "European"
+            ],
+            "deducible_agent": [
+                "perpetrators / assailants"
+            ],
+            "guessed_agent": "European",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        }
+    ],
+    "a6": [
+        {
+            "text": "But the precondition for these reforms is not the austerity demanded by the agreement but economic revival..",
+            "voice_type": "1",
+            "verb_phrase": "austerity demanded by",
+            "co-text": "By THE EDITORIAL BOARD. Greece and its financial overseers agreed on terms for continued bailout payments on Monday. The agreement is cause for relief — without it Greece would go bankrupt. But at the same time it is no cause for celebration – indeed, quite the opposite. Greece must eventually carry out painful reforms. But the precondition for these reforms is not the austerity demanded by the agreement but economic revival..",
+            "context": "The recent agreement between Greece and its financial overseers, securing continued bailout payments and averting bankruptcy, is a necessary but concerning development. While the immediate crisis is averted, the agreement prioritizes austerity measures. However, the editorial board argues that true and sustainable reform for Greece hinges not on continued austerity, but on achieving genuine economic revival – a point that should be the *precondition* for any future reforms.",
+            "entities": [
+                "Greece"
+            ],
+            "deducible_agent": [],
+            "guessed_agent": "the agreement",
+            "agent_status": "explicit",
+            "mystification_idx": "1",
+            "agent_verification": "yes"
+        }
+    ],
+    "a7": [
+        {
+            "text": "The European Central Bank was never granted adequate lending powers..",
+            "voice_type": "2",
+            "verb_phrase": "was never granted",
+            "co-text": ". There is blame to go around for the euro zone’s economic contraction. Greece fudged its fiscal accounts. Spain and Ireland failed to restrain speculative housing bubbles. No country kept close enough watch over the banks. The European Central Bank was never granted adequate lending powers..",
+            "context": "The euro zone's economic contraction stemmed from a widespread failure across multiple nations and institutions. Greece manipulated its financial reporting, while Spain and Ireland allowed unsustainable housing bubbles to develop. A general lack of oversight plagued the banking sector, and the European Central Bank was hampered by insufficient lending authority – all contributing to the crisis. **The final sentence highlights a key systemic weakness: the European Central Bank's limited lending powers, suggesting this restriction significantly hindered its ability to effectively respond to the unfolding economic problems.**",
+            "entities": [
+                "Greece",
+                "Ireland",
+                "The European Central Bank",
+                "Spain"
+            ],
+            "deducible_agent": [
+                "government / authority"
+            ],
+            "guessed_agent": "government / authority",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        }
+    ],
+    "a8": [
+        {
+            "text": "The politics of populist anger are on the march across Europe, fueled by austerity, recession and the inability of mainstream politicians to revive growth..",
+            "voice_type": "1",
+            "verb_phrase": "fueled by austerity, recession and the inability of mainstream politicians",
+            "co-text": "October 15, 2013. Europe’s Populist Backlash. By THE EDITORIAL BOARD. The politics of populist anger are on the march across Europe, fueled by austerity, recession and the inability of mainstream politicians to revive growth..",
+            "context": "This short editorial from October 15, 2013, highlights a growing trend in Europe: a surge in populist political movements. The editorial board attributes this rise to widespread discontent stemming from economic hardship – specifically, the effects of austerity measures and ongoing recession – coupled with a perceived failure of traditional political leaders to stimulate economic recovery. **The core message focuses on the *cause* of this populist surge, identifying economic struggles and mainstream political inaction as the driving forces behind it.**",
+            "entities": [
+                "NA"
+            ],
+            "deducible_agent": [],
+            "guessed_agent": "by austerity, recession and the inability of mainstream politicians",
+            "agent_status": "explicit",
+            "mystification_idx": "1",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Prime Minister Enrico Letta of Italy, who is scheduled to meet with President Obama in Washington on Thursday, warned this week of the danger that rising populism poses to political and economic stability across Europe, especially given the likelihood of strong populist gains in next spring’s European Parliament elections.",
+            "voice_type": "2",
+            "verb_phrase": "is scheduled",
+            "co-text": ". In Greece, the main problem is Golden Dawn, whose violent neo-Nazi thugs have finally provoked a belated government crackdown. In France, it is the anti-immigrant, anti-Europe, National Front, whose clear victory in a local council race on Sunday sent shock waves through both mainstream parties. And in Italy, it is the anti-politics Five Star Movement, which feeds on popular resentment of an out-of-touch political class, austerity directives from Berlin and Brussels, and increased migration of refugees from North Africa and the Middle East.. . Prime Minister Enrico Letta of Italy, who is scheduled to meet with President Obama in Washington on Thursday, warned this week of the danger that rising populism poses to political and economic stability across Europe, especially given the likelihood of strong populist gains in next spring’s European Parliament elections.",
+            "context": "The text highlights a growing wave of populism across Europe – specifically in Greece, France, and Italy – as a significant threat to political and economic stability. Italian Prime Minister Enrico Letta, preparing for a meeting with President Obama, is particularly concerned. He warns that populist movements, fueled by anti-immigrant sentiment, anti-establishment anger, and resentment towards austerity measures, are likely to gain considerable power in the upcoming European Parliament elections, posing a serious risk to the continent's stability.",
+            "entities": [
+                "Washington",
+                "European Parliament",
+                "Italy",
+                "Berlin",
+                "Greece",
+                "neo-Nazi",
+                "Five Star Movement",
+                "Brussels",
+                "North Africa",
+                "National Front",
+                "Enrico Letta",
+                "Obama",
+                "France"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "unknown",
+            "agent_status": "unknown",
+            "mystification_idx": "3",
+            "agent_verification": "NA"
+        },
+        {
+            "text": "Letta, in office since April, has, until now, been constrained by his need to avoid offending former Prime Minister Silvio Berlusconi, who controlled enough votes to bring down the government.",
+            "voice_type": "1",
+            "verb_phrase": "been constrained by",
+            "co-text": "But it will take more than warnings to turn back this tide. Mainstream governments like Mr. Letta’s must convince voters that they can do more than administer the austerity demanded by Germany and can deliver the economic relief demanded by their citizens.. . Mr. Letta, in office since April, has, until now, been constrained by his need to avoid offending former Prime Minister Silvio Berlusconi, who controlled enough votes to bring down the government.",
+            "context": "The text highlights the challenge facing Italian Prime Minister Enrico Letta. While warnings alone are insufficient to reverse current trends, Letta needs to persuade Italian voters that his government can provide economic relief beyond the austerity measures dictated by Germany. This has been difficult thus far because he's had to navigate the political influence of Silvio Berlusconi, whose support was crucial for maintaining the government's stability. **The final sentence underscores that Letta's ability to enact meaningful change has been hampered by his need to appease Berlusconi, demonstrating a significant constraint on his political agency.**",
+            "entities": [
+                "Germany",
+                "Letta",
+                "Silvio Berlusconi"
+            ],
+            "deducible_agent": [],
+            "guessed_agent": "his need to avoid offending former Prime Minister Silvio Berlusconi",
+            "agent_status": "explicit",
+            "mystification_idx": "1",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Those powers need to be strengthened to assure swifter, surer justice.",
+            "voice_type": "2",
+            "verb_phrase": "be strengthened",
+            "co-text": "Berlusconi this month, Mr. Letta is freer to act on needed reforms.. . Mr. Berlusconi, a defendant in multiple court cases, pressed to weaken the powers of judges and prosecutors. Those powers need to be strengthened to assure swifter, surer justice.",
+            "context": "The text highlights a shift in Italy's political landscape. With Silvio Berlusconi currently facing multiple legal battles and attempting to diminish the authority of judges and prosecutors, Prime Minister Enrico Letta now has more latitude to pursue judicial reforms. The core issue is that strengthening the powers of judges and prosecutors is deemed necessary to improve the speed and reliability of the Italian justice system – a direct counter to Berlusconi's efforts. Essentially, Berlusconi's legal troubles are creating an opportunity for Letta to reinforce judicial independence and efficiency.",
+            "entities": [
+                "Berlusconi",
+                "Letta"
+            ],
+            "deducible_agent": [
+                "victims / patients"
+            ],
+            "guessed_agent": "Letta",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "Berlusconi resisted democratizing the way candidates are chosen, and changing the way seats are allocated to make parliamentary deadlock less likely.",
+            "voice_type": "2",
+            "verb_phrase": "are chosen",
+            "co-text": ". Mr. Berlusconi, a defendant in multiple court cases, pressed to weaken the powers of judges and prosecutors. Those powers need to be strengthened to assure swifter, surer justice. As an autocratic political boss, Mr. Berlusconi resisted democratizing the way candidates are chosen, and changing the way seats are allocated to make parliamentary deadlock less likely.",
+            "context": "The text highlights a conflict between former Italian Prime Minister Silvio Berlusconi and the push for judicial reform and democratic processes. Berlusconi, facing legal troubles, actively sought to diminish the authority of judges and prosecutors – a move directly opposed to the need for stronger judicial oversight to ensure efficient and reliable justice. Furthermore, he resisted efforts to democratize candidate selection and parliamentary seat allocation, demonstrating a resistance to broader democratic reforms that would prevent political gridlock. **The final sentence underscores this opposition, emphasizing that these reforms are *needed* to assure swifter, surer justice, implicitly criticizing Berlusconi's actions as detrimental to that goal.**",
+            "entities": [
+                "Berlusconi"
+            ],
+            "deducible_agent": [
+                "committee / panel"
+            ],
+            "guessed_agent": "committee / panel",
+            "agent_status": "other",
+            "mystification_idx": "3",
+            "agent_verification": "no"
+        }
+    ],
+    "a9": [
+        {
+            "text": "Last year, Germany’s current account surplus was 7 percent of its gross domestic product; by contrast, China, which is often criticized for pursuing an aggressive export policy, had a surplus of just 2.3 percent..",
+            "voice_type": "2",
+            "verb_phrase": "is often criticized",
+            "co-text": "But the latest edition, released this week, broke from that tradition by offering some blunt and much-needed perspective about the German economy: Its heavy reliance on exports is hurting weaker European countries that share the euro.. . Germany, the biggest economy in the euro zone, has long been a major contributor to imbalances in the global economy. It exports far more than it imports and does too little to encourage the growth of domestic demand. That has made it hard for countries like Greece and France to increase their exports and revive their economies. Last year, Germany’s current account surplus was 7 percent of its gross domestic product; by contrast, China, which is often criticized for pursuing an aggressive export policy, had a surplus of just 2.3 percent..",
+            "context": "The latest edition of an unnamed publication has challenged a longstanding tradition by directly criticizing Germany's economic policies. Specifically, it argues that Germany's significant and growing current account surplus – exceeding even China's – is negatively impacting the economic health of other Eurozone countries like Greece and France by hindering their ability to export and grow. This highlights a key imbalance within the global economy, with Germany's export-driven model creating hardship for its European neighbors.",
+            "entities": [
+                "Germany",
+                "European",
+                "Greece",
+                "China",
+                "German",
+                "France"
+            ],
+            "deducible_agent": [
+                "critics / commentators"
+            ],
+            "guessed_agent": "Germany",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "This year, Germany is expected to grow just 0.5 percent, according to the International Monetary Fund, in large part because consumer demand is growing slowly and investment is declining..",
+            "voice_type": "2",
+            "verb_phrase": "is expected",
+            "co-text": ". Not surprisingly, German officials said the Treasury’s comments were “incomprehensible.” The economics ministry argued that the surplus simply reflected “the strong competitiveness of the German economy and the international demand for quality products from Germany.”. . Germany makes things that the world wants to buy. The problem is that the country’s obsession with exports comes at a high cost for its neighbors and its own economy. This year, Germany is expected to grow just 0.5 percent, according to the International Monetary Fund, in large part because consumer demand is growing slowly and investment is declining..",
+            "context": "The context highlights a dispute arising from the U.S. Treasury's criticism of Germany's large trade surplus. German officials are dismissing the criticism as baffling, attributing the surplus to the global demand for high-quality German products and the country's strong economic competitiveness. However, the text reveals a deeper issue: Germany’s export-driven economy is contributing to slow domestic growth, with projections indicating a mere 0.5% growth rate this year due to weak consumer demand and declining investment – essentially, **Germany's success in selling to the world is hindering its own internal economic health.**",
+            "entities": [
+                "Germany",
+                "Treasury",
+                "the International Monetary Fund",
+                "German",
+                "The economics ministry"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "The International Monetary Fund",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        },
+        {
+            "text": "And it could take more aggressive steps to reverse the demographic trends that are expected to shrink the country’s population in coming years.",
+            "voice_type": "2",
+            "verb_phrase": "are expected",
+            "co-text": "This year, Germany is expected to grow just 0.5 percent, according to the International Monetary Fund, in large part because consumer demand is growing slowly and investment is declining.. . There is a lot Berlin could do to raise demand at home. For starters, the government can borrow and spend more to help boost investment. It could also cut taxes on lower-income Germans to increase consumer spending. And it could take more aggressive steps to reverse the demographic trends that are expected to shrink the country’s population in coming years.",
+            "context": "The International Monetary Fund forecasts a sluggish 0.5% growth for Germany this year, primarily due to weak consumer demand and decreasing investment. The context highlights potential solutions for Germany to stimulate its economy, specifically mentioning increased government borrowing and spending, tax cuts for lower-income earners, and addressing demographic decline – **all suggesting a need for proactive government intervention to counteract the predicted economic slowdown.**",
+            "entities": [
+                "the International Monetary Fund",
+                "Germany",
+                "Berlin",
+                "Germans"
+            ],
+            "deducible_agent": [
+                "None"
+            ],
+            "guessed_agent": "the International Monetary Fund",
+            "agent_status": "contextual",
+            "mystification_idx": "2",
+            "agent_verification": "yes"
+        }
+    ]
+}
