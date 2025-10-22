@@ -43,7 +43,7 @@ def run_pipeline():
     # 1. init deducable agent list
     try:
         deducable_agent_map = {}
-        with open('D:\mystic\De-mystification\deducable_agents.json', 'r', encoding='utf-8') as f:
+        with open('D:\mystic\deducable_agents.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
             for item in data:
                 if 'verb' in item and 'deduced_agent' in item:
@@ -72,7 +72,7 @@ def run_pipeline():
     # 4. init LLM
     try:
         # llm_model = ChatOpenAI(model_name="gpt-4o", temperature=0.1, openai_api_key=api_key)
-        llm_model = ChatOllama(model="gemma3:12b", temperature=0.1, base_url="http://localhost:11434")
+        llm_model = ChatOllama(model="qwen3:14b", temperature=0.1, base_url="http://localhost:11434")
         print(f"Loaded language model: {llm_model.model}\n")
     except Exception as e:
         print(f"Failed to load language model. {e}\n")

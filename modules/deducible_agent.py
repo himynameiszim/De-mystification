@@ -27,9 +27,9 @@ class DeducibleAgent:
                     "Sentence: \"{sentence}\"\n"
                     "Verb Phrase: \"{verb_phrase}\"\n\n"
                     "Verb List:\n---\n{verb_list}\n---\n\n"
-                    "Based on the verb phrase, which verb from the list is similar? "
-                    "Respond with ONLY the matching verb from the list. "
-                    "If no verb in the list is a good match, respond with the word 'None'."
+                    "Based on the verb phrase, which verb from the list is similar?\n"
+                    "If no verb in the list is a good match, respond with the word 'None'.\n"
+                    "RESPOND ONLY WITH THE VERB, DO NOT ADD ADDITIONAL TEXT.\n\n"
                     "\n\nMatching Verb:"
                 ),
             ),

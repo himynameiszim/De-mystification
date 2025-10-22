@@ -19,6 +19,7 @@ class ContextRetrieverAgent:
         prompt_template_str = (
             "You are an expert at summarizing text.\n"
             "Please provide a short, detailed summary of this entire context. FOCUS on the context of the last sentence.\n\n"
+            "ONLY ANSWER WITH THE SUMMARY. DO NOT add any additional text.\n\n"
             "Context Text:\n\"\"\"\n{context_text}\n\"\"\"\n\n"
             "Detailed Summary:"
         )

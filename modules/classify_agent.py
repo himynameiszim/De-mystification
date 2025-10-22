@@ -23,7 +23,6 @@ class AgentClassifierAgent:
         prompt_str = (
             "You are an expert linguistic analyst. Your task is to identify doer of an action in a passive voice sentence.\n"
             "You will be provided with the list of all entities in the context of the target sentence.\n\n"
-            "Detailed Information:\n"
             "1. TARGET PASSIVE SENTENCE: {target_sentence}\n"
             "2. Voice Type of the Target Sentence: {voice_type} (1 - full passive, 2 - truncated passive)\n"
             "3. Extracted PASSIVE VERB PHRASE from Target Sentence: {verb_phrase}\n"
