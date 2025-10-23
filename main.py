@@ -4,16 +4,12 @@ import json
 import multiprocessing
 from functools import partial
 from tqdm import tqdm
-# import warnings
+import time
+import warnings
 
-# warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore")
 
 from dotenv import load_dotenv
-
-# # importing PassivePy
-# PassivePySRC_path = "path_toPassivePySrc"
-# if PassivePySRC_path not in sys.path:
-#     sys.path.append(PassivePySRC_path)
 
 try:
     from PassivePySrc import PassivePy
@@ -96,7 +92,7 @@ def initialize_agent():
 
     # 3. Initialize LLM model (adjust if needed)
     try:
-        llm_model = ChatOllama(model="qwen2.5:1.5b", temperature=0.1, base_url="http://localhost:11434") # example for Ollama, for openAI, an API key parameter is needed
+        llm_model = ChatOllama(model="llama3.1:8b", temperature=0.1, base_url="http://localhost:11434") # example for Ollama, for openAI, an API key parameter is needed
         print(f"Loaded language model: {llm_model.model}\n")
     except Exception as e:
         print(f"Failed to load language model. {e}\n")
@@ -118,8 +114,6 @@ def initialize_agent():
         return
 
 def demystify(file_item, deducable_agent_map):
-    if not agent:
-        initialize_agent()
     
     filename, sentences = file_item
     single_file_dict = {filename: sentences}
@@ -130,7 +124,7 @@ def demystify(file_item, deducable_agent_map):
         return filename, {}
     
     sentences_dict = agent['context_retriever'].run(sentences_dict)
-    sentences_dict = agent['deduce_agent'].run(sentences_dict, deducable_agent_map=deducable_agent_map)
+    sentences_dict = agent['deduce_agent'].run(sentences_dict, deducible_agent_map=deducable_agent_map)
     sentences_dict = agent['agent_inferencer'].run(sentences_dict)
     sentences_dict = agent['mystification_classifier'].run(sentences_dict)
     sentences_dict = agent['agent_classifier'].run(sentences_dict)
@@ -141,19 +135,22 @@ def demystify(file_item, deducable_agent_map):
 def run_pipeline():
     sentences_dict, deducable_agent_map = load_document()
     num_files = len(sentences_dict)
-    num_cores = multiprocessing.cpu_count()
+    num_cores = 4
     print(f"Processing with {num_cores} cores...\n")
+    start_time = time.time()
 
     tasks = sentences_dict.items()
     agent_func = partial(demystify, deducable_agent_map=deducable_agent_map)
 
     final_sentences_dict = {}
-    with multiprocessing.Pool(processes=num_cores) as pool:
+    with multiprocessing.Pool(processes=num_cores, initializer=initialize_agent) as pool:
         for filename, processed_sentences in tqdm(pool.imap_unordered(agent_func, tasks), total=num_files, desc="Processing files"):
             if processed_sentences:
                 final_sentences_dict[filename] = processed_sentences
     
     print("Done.\n")
+    end_time = time.time()
+    print(f"Total processing time: {end_time - start_time:.2f} seconds\n")
 
     print("...Running annotator...\n")
     annotator = AnnotatorAgent()

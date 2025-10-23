@@ -99,3 +99,21 @@ def extract_entity(text: str) -> list:
 
     entities = list(set([ent.text for ent in doc.ents if ent.label_ in ['PERSON', 'ORG', 'GPE', 'NORP']]))
     return entities if entities else ["NA"]
+
+def get_agent_full_passive(text: str) -> str:
+    nlp = spacy.load("en_core_web_lg")
+    doc = nlp(text)
+    parts = text.rsplit(' by ', 1)
+
+    if len(parts) > 1:
+        agent_phrase = parts[1]
+        doc = nlp(agent_phrase)
+        # The first noun chunk is likely the main agent phrase.
+        noun_chunks = list(doc.noun_chunks)
+        if noun_chunks:
+            core_agent = noun_chunks[0].text
+            return core_agent.strip()
+        else:
+            # If spaCy finds no noun chunks, fall back to simple cleaning.
+            cleaned_agent = re.sub(r'[.,?!;]+$', '', agent_phrase.strip())
+            return cleaned_agent

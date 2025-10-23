@@ -1,6 +1,6 @@
 from langchain_core.language_models.llms import LLM
-from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import RunnableSequence
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 
 from .utils import extract_entity
 
@@ -19,20 +19,21 @@ class ContextRetrieverAgent:
         prompt_template_str = (
             "You are an expert at summarizing text.\n"
             "Please provide a short, detailed summary of this entire context. FOCUS on the context of the last sentence.\n\n"
-            "ONLY ANSWER WITH THE SUMMARY. DO NOT add any additional text.\n\n"
+            "ONLY ANSWER WITH THE SUMMARY. DO NOT ADD ANY ADDITIONAL THINKING EXCEPT FOR THE SUMMARY.\n\n"
             "Context Text:\n\"\"\"\n{context_text}\n\"\"\"\n\n"
             "Detailed Summary:"
         )
-        prompt_template = PromptTemplate.from_template(prompt_template_str)
-        
-        self.summarization_chain = RunnableSequence(
-            prompt_template | self.llm
-        )
+        prompt_template = ChatPromptTemplate.from_template(prompt_template_str)
+        self.summarization_chain = prompt_template | self.llm | StrOutputParser()
 
     def run(self, sentences_dict: dict) -> dict:
         for filename, sentence_list_from_passive_detector in sentences_dict.items():
             # This new list will hold dictionaries instead of lists
             processed_file_entries = [] 
+
+            # batching attempt here
+            batch_inputs = []
+            sentences_to_update = []
 
             for i, sentence_entry in enumerate(sentence_list_from_passive_detector):
 
@@ -62,31 +63,36 @@ class ContextRetrieverAgent:
                     
                     context_texts_to_summarize = sentences_before_texts + [current_sentence_text]
                     full_context_string = " ".join(filter(None, context_texts_to_summarize)).strip()
+                    
                     entities_list = extract_entity(full_context_string) 
+                    output_sentence_data['co_text'] = full_context_string
+                    output_sentence_data['entities'] = entities_list
 
                     if full_context_string:
-                        try:
-                            # Invoke the summarization chain
-                            summary_result = self.summarization_chain.invoke({'context_text': full_context_string})
-                            
-                            summary_text = ""
-                            if hasattr(summary_result, 'content'):  # For AIMessage from ChatModels
-                                summary_text = summary_result.content
-                            elif isinstance(summary_result, str): # For simpler LLM outputs
-                                summary_text = summary_result
-                                
-                            output_sentence_data['context'] = summary_text.strip()
-                            output_sentence_data['co-text'] = full_context_string
-                            output_sentence_data['entities'] = entities_list
-                            
-                        except Exception as e:
-                            print(f"Error during summarization for sentence '{current_sentence_text[:50]}...' in {filename}: {e}")
-                            output_sentence_data['context'] = "Error during summarization."
+                        batch_inputs.append({"context_text": full_context_string})
+                        sentences_to_update.append(output_sentence_data)
                     else:
-                        output_sentence_data['context'] = "Context string was empty; no summary generated."
+                        output_sentence_data['context'] = "NA"
                 processed_file_entries.append(output_sentence_data)
+                
+            if batch_inputs:
+                try:
+                    summaries = self.summarization_chain.batch(
+                                batch_inputs,
+                                config={"return_exceptions": True} 
+                    )
+                except Exception as e:
+                    print(f"Error during batched context summarization in file '{filename}: {e}")
+                    summaries = len(batch_inputs) * [e]
+
+                for sentence_data, summary in zip(sentences_to_update, summaries):
+                    if isinstance(summary, Exception):
+                        display_text = sentence_data.get('text, [No text]')[:50]
+                        print(f"Error during batched context summarization for sentence'{display_text}...': {summary}")
+                        sentence_data['context'] = "NA"
+                    else:
+                        sentence_data['context'] = summary.strip()
             
-            # Replace the list of lists with the new list of dictionaries for the current file
             sentences_dict[filename] = processed_file_entries
             
         return sentences_dict
